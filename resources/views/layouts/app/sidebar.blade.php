@@ -11,22 +11,35 @@
             </flux:sidebar.header>
 
             <flux:sidebar.nav>
-                <flux:sidebar.group :heading="__('Platform')" class="grid">
+                <flux:sidebar.group :heading="__('messages.platform')" class="grid">
                     <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Dashboard') }}
+                        {{ __('messages.dashboard') }}
                     </flux:sidebar.item>
+
+                    @auth
+                        @if(auth()->user()->isArtist())
+                            <flux:sidebar.item icon="musical-note" :href="route('artist.catalog')" wire:navigate>
+                                {{ __('Catalogue') }}
+                            </flux:sidebar.item>
+                            <flux:sidebar.item icon="wallet" :href="route('artist.wallet')" wire:navigate>
+                                {{ __('messages.my_wallet') }}
+                            </flux:sidebar.item>
+                        @endif
+
+                        @if(auth()->user()->isFan())
+                            <flux:sidebar.item icon="library" :href="route('library')" wire:navigate>
+                                {{ __('messages.my_library') }}
+                            </flux:sidebar.item>
+                        @endif
+                    @endauth
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 
             <flux:spacer />
 
             <flux:sidebar.nav>
-                <flux:sidebar.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                    {{ __('Repository') }}
-                </flux:sidebar.item>
-
-                <flux:sidebar.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
-                    {{ __('Documentation') }}
+                <flux:sidebar.item icon="language" href="{{ route('locale.switch', ['locale' => app()->getLocale() === 'fr' ? 'en' : 'fr']) }}">
+                    {{ app()->getLocale() === 'fr' ? __('messages.english') : __('messages.french') }}
                 </flux:sidebar.item>
             </flux:sidebar.nav>
 
@@ -66,7 +79,7 @@
 
                     <flux:menu.radio.group>
                         <flux:menu.item :href="route('profile.edit')" icon="cog" wire:navigate>
-                            {{ __('Settings') }}
+                            {{ __('messages.settings') }}
                         </flux:menu.item>
                     </flux:menu.radio.group>
 
@@ -81,7 +94,7 @@
                             class="w-full cursor-pointer"
                             data-test="logout-button"
                         >
-                            {{ __('Log out') }}
+                            {{ __('messages.logout') }}
                         </flux:menu.item>
                     </form>
                 </flux:menu>
