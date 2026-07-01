@@ -15,4 +15,10 @@ return [
     'already_verified' => 'Your account is already verified.',
     'verification_sent' => 'A new verification link has been sent.',
     'unauthorized' => 'You are not authorized to access this page.',
+    'otp_expired' => 'The verification code has expired.',
+    'otp_max_attempts' => 'Too many attempts. Please request a new code.',
+    'otp_verified' => 'Phone number verified successfully.',
+    'throttle_otp' => 'Too many requests. Please try again in :seconds seconds.',
+    'session_expired' => 'Session expired. Please try again.',
+    'phone_verified' => 'Your phone number has been verified. You can now log in.',
 ];

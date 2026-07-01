@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Actions\Fortify;
 
 use App\Concerns\PasswordValidationRules;
 use App\Concerns\ProfileValidationRules;
+use App\Domain\Users\Actions\SendOtpAction;
 use App\Domain\Users\Models\User;
+use App\Domain\Wallet\Models\Wallet;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
@@ -26,12 +30,27 @@ class CreateNewUser implements CreatesNewUsers
             'role' => ['required', 'in:fan,artist'],
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'phone' => $input['phone'],
             'password' => $input['password'],
             'role' => $input['role'],
         ]);
+
+        // Assign role via Spatie
+        $user->assignRole($input['role']);
+
+        // Create wallet for the user
+        Wallet::create([
+            'user_id' => $user->id,
+            'balance' => 0,
+            'currency' => 'XAF',
+        ]);
+
+        // Send OTP for phone verification
+        app(SendOtpAction::class)->execute($input['phone'], 'verification', $user);
+
+        return $user;
     }
 }

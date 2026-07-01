@@ -59,8 +59,9 @@ class User extends Authenticatable implements PasskeyUser
     public function initials(): string
     {
         $initials = Str::initials($this->name, true);
+
         return Str::length($initials) > 1
-            ? Str::substr($initials, 0, 1) . Str::substr($initials, -1)
+            ? Str::substr($initials, 0, 1).Str::substr($initials, -1)
             : $initials;
     }
 
@@ -82,6 +83,14 @@ class User extends Authenticatable implements PasskeyUser
     public function hasVerifiedPhone(): bool
     {
         return $this->phone_verified_at !== null;
+    }
+
+    public function hasVipAccess(): bool
+    {
+        return $this->vipSubscriptions()
+            ->where('status', 'active')
+            ->where('expires_at', '>', now())
+            ->exists();
     }
 
     public function canRequestPayout(): bool
@@ -106,6 +115,14 @@ class User extends Authenticatable implements PasskeyUser
     public function kycVerifications(): HasMany
     {
         return $this->hasMany(KycVerification::class);
+    }
+
+    /**
+     * @return HasMany<\App\Domain\Vip\Models\VipSubscription>
+     */
+    public function vipSubscriptions(): HasMany
+    {
+        return $this->hasMany(\App\Domain\Vip\Models\VipSubscription::class);
     }
 
     /**

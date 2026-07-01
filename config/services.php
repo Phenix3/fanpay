@@ -35,4 +35,31 @@ return [
         ],
     ],
 
+    // ─── SMS ───────────────────────────────────────────
+
+    'sms' => [
+        'driver' => env('SMS_DRIVER', 'log'), // log | unimatrix
+    ],
+
+    'unimatrix' => [
+        'api_url' => env('UNIMATRIX_API_URL', 'https://api.unimatrix.cm/sms/1/text/query'),
+        'access_key_id' => env('UNIMATRIX_ACCESS_KEY_ID'),
+        'secret_key' => env('UNIMATRIX_SECRET_KEY'),
+        'sender' => env('UNIMATRIX_SENDER', 'FanPay'),
+    ],
+
+    // ─── Paiements (Mobile Money) ───────────────────────
+
+    'campay' => [
+        'api_url' => env('CAMPAY_API_URL', 'https://demo.campay.net/api'),
+        'app_username' => env('CAMPAY_APP_USERNAME'),
+        'app_password' => env('CAMPAY_APP_PASSWORD'),
+    ],
+
+    'notchpay' => [
+        'api_url' => env('NOTCHPAY_API_URL', 'https://api.notchpay.co'),
+        'api_key' => env('NOTCHPAY_API_KEY'),
+        'encryption_key' => env('NOTCHPAY_ENCRYPTION_KEY'),
+    ],
+
 ];

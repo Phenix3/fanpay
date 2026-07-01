@@ -19,6 +19,16 @@ Route::get('/locale/{locale}', function (string $locale) {
     return redirect()->back()->cookie('locale', $locale, 60 * 24 * 365);
 })->name('locale.switch');
 
+// OTP routes (guest)
+Route::middleware('guest')->group(function () {
+    Route::get('/verify-otp/{purpose?}', [\App\Http\Controllers\Auth\OtpController::class, 'show'])
+        ->name('otp.verify');
+    Route::post('/otp/send', [\App\Http\Controllers\Auth\OtpController::class, 'send'])
+        ->name('otp.send');
+    Route::post('/otp/verify', [\App\Http\Controllers\Auth\OtpController::class, 'verify'])
+        ->name('otp.verify.submit');
+});
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 });

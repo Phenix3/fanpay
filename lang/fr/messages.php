@@ -64,4 +64,11 @@ return [
     'fan' => 'Fan',
     'artist' => 'Artiste',
     'admin' => 'Administrateur',
+    'otp_message' => 'Votre code de vérification FanPay est : :code. Il expire dans 5 minutes.',
+    'verify_phone' => 'Vérifier votre téléphone',
+    'verification_code' => 'Code de vérification',
+    'resend_code' => 'Renvoyer le code',
+    'didnt_receive_code' => 'Vous n\'avez pas reçu le code ?',
+    'code_sent_to' => 'Un code a été envoyé au',
+    'verify' => 'Vérifier',
 ];

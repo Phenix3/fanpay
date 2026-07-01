@@ -1,4 +1,4 @@
-<x-layouts::auth :title="__('Register')">
+<x-layouts::auth :title="__('Create an account')">
     <div class="flex flex-col gap-6">
         <x-auth-header :title="__('Create an account')" :description="__('Enter your details below to create your account')" />
 
@@ -7,10 +7,11 @@
 
         <form method="POST" action="{{ route('register.store') }}" class="flex flex-col gap-6">
             @csrf
+
             <!-- Name -->
             <flux:input
                 name="name"
-                :label="__('Name')"
+                :label="__('messages.name')"
                 :value="old('name')"
                 type="text"
                 required
@@ -22,7 +23,7 @@
             <!-- Email Address -->
             <flux:input
                 name="email"
-                :label="__('Email address')"
+                :label="__('messages.email')"
                 :value="old('email')"
                 type="email"
                 required
@@ -30,14 +31,44 @@
                 placeholder="email@example.com"
             />
 
+            <!-- Phone -->
+            <flux:input
+                name="phone"
+                :label="__('messages.phone')"
+                :value="old('phone')"
+                type="tel"
+                required
+                autocomplete="tel"
+                placeholder="691234567"
+                inputmode="numeric"
+                pattern="[0-9]{9}"
+            />
+
+            <!-- Role -->
+            <fieldset class="space-y-2">
+                <legend class="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                    {{ __('Je suis...') }}
+                </legend>
+                <div class="flex gap-4">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <flux:radio name="role" value="fan" checked />
+                        <span class="text-sm text-zinc-600 dark:text-zinc-400">{{ __('messages.fan') }}</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <flux:radio name="role" value="artist" />
+                        <span class="text-sm text-zinc-600 dark:text-zinc-400">{{ __('messages.artist') }}</span>
+                    </label>
+                </div>
+            </fieldset>
+
             <!-- Password -->
             <flux:input
                 name="password"
-                :label="__('Password')"
+                :label="__('messages.password')"
                 type="password"
                 required
                 autocomplete="new-password"
-                :placeholder="__('Password')"
+                :placeholder="__('messages.password')"
                 passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
                 viewable
             />
@@ -50,7 +81,6 @@
                 required
                 autocomplete="new-password"
                 :placeholder="__('Confirm password')"
-                passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
                 viewable
             />
 
