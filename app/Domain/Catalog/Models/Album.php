@@ -24,6 +24,7 @@ class Album extends Model implements HasMedia
         'type',
         'price',
         'release_date',
+        'genre_id',
         'is_published',
         'is_vip_exclusive',
         'description',
