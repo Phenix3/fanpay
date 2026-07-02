@@ -140,4 +140,12 @@ class User extends Authenticatable implements PasskeyUser
     {
         return $this->hasMany(\App\Domain\Wallet\Models\Transaction::class);
     }
+
+    /**
+     * @return HasMany<\App\Domain\Content\Models\ContentRight>
+     */
+    public function contentRights(): HasMany
+    {
+        return $this->hasMany(\App\Domain\Content\Models\ContentRight::class, 'artist_id');
+    }
 }

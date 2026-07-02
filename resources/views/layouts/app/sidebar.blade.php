@@ -36,6 +36,9 @@
                             <flux:sidebar.item icon="sparkles" :href="route('artist.dedications')" wire:navigate>
                                 {{ __('messages.dedications') }}
                             </flux:sidebar.item>
+                            <flux:sidebar.item icon="shield-check" :href="route('artist.content-rights')" wire:navigate>
+                                {{ __('messages.copyright') }}
+                            </flux:sidebar.item>
                         @endif
 
                         @if(auth()->user()->isArtist() || auth()->user()->isFan())

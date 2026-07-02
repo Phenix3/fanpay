@@ -64,6 +64,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('artist/dedications', 'pages::artist.dedications')
         ->middleware(['role:artist'])
         ->name('artist.dedications');
+
+    // Artist content rights (copyright)
+    Route::livewire('artist/content-rights', 'pages::artist.content-rights')
+        ->middleware(['role:artist'])
+        ->name('artist.content-rights');
 });
 
 // Fan dedication request (auth required for now)

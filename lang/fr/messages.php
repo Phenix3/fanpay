@@ -362,7 +362,32 @@ return [
     'create_contest' => 'Créer un concours',
     'confirm_remove_candidate' => 'Retirer ce candidat ?',
     'contest_management' => 'Gestion des concours',
+
+    // Content Rights (Copyright)
+    'copyright' => 'Droits d\'auteur',
+    'manage_copyright' => 'Déclarez vos œuvres et gérez vos droits',
+    'what_is_copyright' => 'Qu\'est-ce que la déclaration des droits ?',
+    'copyright_explanation' => 'En déclarant vos œuvres via FanPay, vous attestez en être l\'auteur et propriétaire.',
+    'socam_info' => 'La SOCAM (Société Camerounaise de l\'Art Musical) est l\'organisme de gestion collective des droits d\'auteur au Cameroun.',
+    'socam_member' => 'Membre SOCAM',
+    'socam_member_desc' => 'Je suis membre de la Société Camerounaise de l\'Art Musical',
+    'socam_activated' => 'Vous êtes maintenant membre SOCAM. Vos œuvres sont déclarées.',
+    'socam_deactivated' => 'Membre SOCAM désactivé.',
+    'declare_works' => 'Déclarez vos œuvres',
+    'declare_album' => 'Déclarer',
+    'remove_declaration' => 'Retirer',
+    'declared' => 'Déclaré',
+    'not_declared' => 'Non déclaré',
+    'declared_count' => 'déclarée(s)',
+    'tracks_declared' => 'Morceaux déclarés',
+    'albums_declared' => 'Albums déclarés',
+    'no_albums_to_declare' => 'Aucun album à déclarer. Créez d\'abord des albums dans votre catalogue.',
+    'no_tracks_to_declare' => 'Aucun morceau à déclarer. Créez d\'abord des morceaux dans votre catalogue.',
+    'declaration_removed' => 'Déclaration retirée pour ":title".',
+    'declaration_added' => '":title" déclaré.',
+    'copyright_legal' => 'En déclarant vos œuvres, vous confirmez en être l\'auteur et/ou le détenteur des droits.',
 ];
+
 
 
 

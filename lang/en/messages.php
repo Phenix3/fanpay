@@ -363,7 +363,32 @@ return [
     'create_contest' => 'Create contest',
     'confirm_remove_candidate' => 'Remove this candidate?',
     'contest_management' => 'Contest management',
+
+    // Content Rights (Copyright)
+    'copyright' => 'Copyright',
+    'manage_copyright' => 'Declare your works and manage your rights',
+    'what_is_copyright' => 'What is copyright declaration?',
+    'copyright_explanation' => 'By declaring your works on FanPay, you certify that you are the author and owner.',
+    'socam_info' => 'SOCAM (Société Camerounaise de l\'Art Musical) is the Cameroonian collective rights management organization.',
+    'socam_member' => 'SOCAM Member',
+    'socam_member_desc' => 'I am a member of SOCAM',
+    'socam_activated' => 'You are now a SOCAM member. Your works are declared.',
+    'socam_deactivated' => 'SOCAM membership deactivated.',
+    'declare_works' => 'Declare your works',
+    'declare_album' => 'Declare',
+    'remove_declaration' => 'Remove',
+    'declared' => 'Declared',
+    'not_declared' => 'Not declared',
+    'declared_count' => 'declared',
+    'tracks_declared' => 'Tracks declared',
+    'albums_declared' => 'Albums declared',
+    'no_albums_to_declare' => 'No albums to declare. Create albums in your catalog first.',
+    'no_tracks_to_declare' => 'No tracks to declare. Create tracks in your catalog first.',
+    'declaration_removed' => 'Declaration removed for ":title".',
+    'declaration_added' => '":title" declared.',
+    'copyright_legal' => 'By declaring your works, you confirm that you are the author and/or rights holder.',
 ];
+
 
 
 
