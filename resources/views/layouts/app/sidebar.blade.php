@@ -24,6 +24,12 @@
                             <flux:sidebar.item icon="wallet" :href="route('artist.wallet')" wire:navigate>
                                 {{ __('messages.my_wallet') }}
                             </flux:sidebar.item>
+                            <flux:sidebar.item icon="shopping-bag" :href="route('artist.store')" wire:navigate>
+                                {{ __('messages.store') }}
+                            </flux:sidebar.item>
+                            <flux:sidebar.item icon="shopping-cart" :href="route('artist.orders')" wire:navigate>
+                                {{ __('messages.orders') }}
+                            </flux:sidebar.item>
                         @endif
 
                         @if(auth()->user()->isFan())

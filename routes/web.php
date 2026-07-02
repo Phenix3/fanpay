@@ -45,6 +45,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('artist/catalog/albums/{album}/tracks', 'pages::artist.album-tracks')
         ->middleware(['role:artist'])
         ->name('artist.catalog.albums.tracks');
+
+    // Artist store
+    Route::livewire('artist/store', 'pages::artist.store')
+        ->middleware(['role:artist'])
+        ->name('artist.store');
+
+    Route::livewire('artist/orders', 'pages::artist.orders')
+        ->middleware(['role:artist'])
+        ->name('artist.orders');
 });
 
 require __DIR__.'/settings.php';
