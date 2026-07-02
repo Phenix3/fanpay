@@ -20,6 +20,8 @@ class Dedication extends Model
         'response_media',
         'response_message',
         'delivered_at',
+        'reference',
+        'payment_ref',
     ];
 
     protected function casts(): array

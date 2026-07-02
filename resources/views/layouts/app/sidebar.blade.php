@@ -33,11 +33,17 @@
                             <flux:sidebar.item icon="crown" :href="route('artist.vip')" wire:navigate>
                                 {{ __('messages.vip') }}
                             </flux:sidebar.item>
+                            <flux:sidebar.item icon="sparkles" :href="route('artist.dedications')" wire:navigate>
+                                {{ __('messages.dedications') }}
+                            </flux:sidebar.item>
                         @endif
 
                         @if(auth()->user()->isFan())
                             <flux:sidebar.item icon="library" :href="route('library')" wire:navigate>
                                 {{ __('messages.my_library') }}
+                            </flux:sidebar.item>
+                            <flux:sidebar.item icon="sparkles" :href="route('dedications.request')" wire:navigate>
+                                {{ __('messages.request_dedication') }}
                             </flux:sidebar.item>
                         @endif
                     @endauth

@@ -59,6 +59,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('artist/vip', 'pages::artist.vip')
         ->middleware(['role:artist'])
         ->name('artist.vip');
+
+    // Artist dedications
+    Route::livewire('artist/dedications', 'pages::artist.dedications')
+        ->middleware(['role:artist'])
+        ->name('artist.dedications');
+});
+
+// Fan dedication request (auth required for now)
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::livewire('dedications/request', 'pages::request-dedication')
+        ->name('dedications.request');
 });
 
 require __DIR__.'/settings.php';
