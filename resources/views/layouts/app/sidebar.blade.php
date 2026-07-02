@@ -38,12 +38,24 @@
                             </flux:sidebar.item>
                         @endif
 
+                        @if(auth()->user()->isArtist() || auth()->user()->isFan())
+                            <flux:sidebar.item icon="trophy" :href="route('contests')" wire:navigate>
+                                {{ __('messages.contests') }}
+                            </flux:sidebar.item>
+                        @endif
+
                         @if(auth()->user()->isFan())
                             <flux:sidebar.item icon="library" :href="route('library')" wire:navigate>
                                 {{ __('messages.my_library') }}
                             </flux:sidebar.item>
                             <flux:sidebar.item icon="sparkles" :href="route('dedications.request')" wire:navigate>
                                 {{ __('messages.request_dedication') }}
+                            </flux:sidebar.item>
+                        @endif
+
+                        @if(auth()->user()->isAdmin())
+                            <flux:sidebar.item icon="wrench" :href="route('admin.contests')" wire:navigate>
+                                {{ __('contest_management') }}
                             </flux:sidebar.item>
                         @endif
                     @endauth

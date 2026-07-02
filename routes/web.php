@@ -72,4 +72,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->name('dedications.request');
 });
 
+// Voting contests
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::livewire('contests', 'pages::contests')->name('contests');
+});
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::livewire('admin/contests', 'pages::artist.contests')
+        ->middleware(['role:admin'])
+        ->name('admin.contests');
+});
+
 require __DIR__.'/settings.php';
