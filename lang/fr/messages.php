@@ -386,7 +386,43 @@ return [
     'declaration_removed' => 'Déclaration retirée pour ":title".',
     'declaration_added' => '":title" déclaré.',
     'copyright_legal' => 'En déclarant vos œuvres, vous confirmez en être l\'auteur et/ou le détenteur des droits.',
+
+    // Events & Ticketing
+    'events' => 'Événements',
+    'manage_events' => 'Créez et gérez vos événements et billetterie',
+    'new_event' => 'Nouvel événement',
+    'event_created' => 'Événement créé avec succès.',
+    'event_updated' => 'Événement mis à jour.',
+    'event_title' => 'Titre de l\'événement',
+    'event_title_placeholder' => 'ex: Concert Live à Douala',
+    'venue' => 'Lieu',
+    'venue_placeholder' => 'ex: Palais des Sports',
+    'event_date' => 'Date & heure',
+    'address' => 'Adresse',
+    'ticket_types' => 'Types de billets',
+    'add_ticket_type' => 'Ajouter un type de billet',
+    'edit_ticket_type' => 'Modifier le type de billet',
+    'ticket_type_added' => 'Type de billet ajouté.',
+    'ticket_type_updated' => 'Type de billet mis à jour.',
+    'ticket_type_deleted' => 'Type de billet supprimé.',
+    'ticket_name' => 'Nom',
+    'ticket_name_placeholder' => 'ex: Standard, VIP, Gold',
+    'ticket_price' => 'Prix (FCFA)',
+    'ticket_quantity' => 'Quantité',
+    'ticket_description' => 'Description',
+    'ticket_perks' => 'Avantages inclus...',
+    'no_ticket_types' => 'Aucun type de billet. Ajoutez des catégories de billets.',
+    'sold_out' => 'vendus',
+    'ticket_type_count' => 'type(s) de billet',
+    'status_upcoming' => 'À venir',
+    'status_past' => 'Passé',
+    'no_events' => 'Aucun événement',
+    'no_events_desc' => 'Créez votre premier événement et vendez des billets.',
+    'create_event' => 'Créer un événement',
+    'confirm_delete_ticket_type' => 'Supprimer ce type de billet ?',
+    'publish' => 'Publier',
 ];
+
 
 
 

@@ -69,6 +69,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('artist/content-rights', 'pages::artist.content-rights')
         ->middleware(['role:artist'])
         ->name('artist.content-rights');
+
+    // Artist events & ticketing
+    Route::livewire('artist/events', 'pages::artist.events')
+        ->middleware(['role:artist'])
+        ->name('artist.events');
 });
 
 // Fan dedication request (auth required for now)

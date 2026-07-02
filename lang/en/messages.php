@@ -387,7 +387,43 @@ return [
     'declaration_removed' => 'Declaration removed for ":title".',
     'declaration_added' => '":title" declared.',
     'copyright_legal' => 'By declaring your works, you confirm that you are the author and/or rights holder.',
+
+    // Events & Ticketing
+    'events' => 'Events',
+    'manage_events' => 'Create and manage your events and ticketing',
+    'new_event' => 'New Event',
+    'event_created' => 'Event created successfully.',
+    'event_updated' => 'Event updated.',
+    'event_title' => 'Event title',
+    'event_title_placeholder' => 'e.g. Live Concert in Douala',
+    'venue' => 'Venue',
+    'venue_placeholder' => 'e.g. Palais des Sports',
+    'event_date' => 'Date & time',
+    'address' => 'Address',
+    'ticket_types' => 'Ticket types',
+    'add_ticket_type' => 'Add ticket type',
+    'edit_ticket_type' => 'Edit ticket type',
+    'ticket_type_added' => 'Ticket type added.',
+    'ticket_type_updated' => 'Ticket type updated.',
+    'ticket_type_deleted' => 'Ticket type deleted.',
+    'ticket_name' => 'Name',
+    'ticket_name_placeholder' => 'e.g. Standard, VIP, Gold',
+    'ticket_price' => 'Price (FCFA)',
+    'ticket_quantity' => 'Quantity',
+    'ticket_description' => 'Description',
+    'ticket_perks' => 'Included perks...',
+    'no_ticket_types' => 'No ticket types. Add ticket categories.',
+    'sold_out' => 'sold',
+    'ticket_type_count' => 'ticket type(s)',
+    'status_upcoming' => 'Upcoming',
+    'status_past' => 'Past',
+    'no_events' => 'No events',
+    'no_events_desc' => 'Create your first event and sell tickets.',
+    'create_event' => 'Create event',
+    'confirm_delete_ticket_type' => 'Delete this ticket type?',
+    'publish' => 'Publish',
 ];
+
 
 
 

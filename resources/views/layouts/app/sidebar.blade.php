@@ -39,6 +39,9 @@
                             <flux:sidebar.item icon="shield-check" :href="route('artist.content-rights')" wire:navigate>
                                 {{ __('messages.copyright') }}
                             </flux:sidebar.item>
+                            <flux:sidebar.item icon="calendar-days" :href="route('artist.events')" wire:navigate>
+                                {{ __('messages.events') }}
+                            </flux:sidebar.item>
                         @endif
 
                         @if(auth()->user()->isArtist() || auth()->user()->isFan())
