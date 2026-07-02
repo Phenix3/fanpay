@@ -30,6 +30,9 @@
                             <flux:sidebar.item icon="shopping-cart" :href="route('artist.orders')" wire:navigate>
                                 {{ __('messages.orders') }}
                             </flux:sidebar.item>
+                            <flux:sidebar.item icon="crown" :href="route('artist.vip')" wire:navigate>
+                                {{ __('messages.vip') }}
+                            </flux:sidebar.item>
                         @endif
 
                         @if(auth()->user()->isFan())

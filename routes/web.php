@@ -54,6 +54,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('artist/orders', 'pages::artist.orders')
         ->middleware(['role:artist'])
         ->name('artist.orders');
+
+    // Artist VIP plans
+    Route::livewire('artist/vip', 'pages::artist.vip')
+        ->middleware(['role:artist'])
+        ->name('artist.vip');
 });
 
 require __DIR__.'/settings.php';
