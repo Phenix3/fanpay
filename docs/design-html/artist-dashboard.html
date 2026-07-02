@@ -1,0 +1,634 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>MboaSound Artist Dashboard</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "on-secondary-fixed-variant": "#8a1d00",
+                            "on-secondary-container": "#560e00",
+                            "on-primary-container": "#007143",
+                            background: "#131313",
+                            "on-error-container": "#ffdad6",
+                            "tertiary-fixed": "#ffe170",
+                            "surface-container-highest": "#353534",
+                            "on-secondary": "#621100",
+                            "surface-container": "#201f1f",
+                            "on-surface": "#e5e2e1",
+                            "on-secondary-fixed": "#3c0700",
+                            "primary-container": "#00ff9d",
+                            "surface-container-low": "#1c1b1b",
+                            primary: "#f4fff3",
+                            "on-error": "#690005",
+                            "on-background": "#e5e2e1",
+                            "tertiary-container": "#ffdd56",
+                            "surface-container-lowest": "#0e0e0e",
+                            "on-surface-variant": "#b9cbbc",
+                            tertiary: "#fffbf9",
+                            "primary-fixed-dim": "#00e38b",
+                            "on-tertiary-container": "#746100",
+                            surface: "#131313",
+                            "on-tertiary": "#3a3000",
+                            "inverse-primary": "#006d40",
+                            "surface-bright": "#3a3939",
+                            "on-primary-fixed": "#002110",
+                            "on-primary-fixed-variant": "#00522f",
+                            "outline-variant": "#3b4a3f",
+                            "on-primary": "#00391f",
+                            "secondary-container": "#ff562c",
+                            "surface-variant": "#353534",
+                            "secondary-fixed": "#ffdad2",
+                            "on-tertiary-fixed-variant": "#544600",
+                            "on-tertiary-fixed": "#221b00",
+                            outline: "#849587",
+                            error: "#ffb4ab",
+                            secondary: "#ffb4a2",
+                            "surface-container-high": "#2a2a2a",
+                            "error-container": "#93000a",
+                            "inverse-surface": "#e5e2e1",
+                            "surface-dim": "#131313",
+                            "primary-fixed": "#56ffa8",
+                            "surface-tint": "#00e38b",
+                            "inverse-on-surface": "#313030",
+                            "secondary-fixed-dim": "#ffb4a2",
+                            "tertiary-fixed-dim": "#e9c400",
+                        },
+                        borderRadius: {
+                            DEFAULT: "1rem",
+                            lg: "2rem",
+                            xl: "3rem",
+                            full: "9999px",
+                        },
+                        spacing: {
+                            gutter: "24px",
+                            "container-max": "1440px",
+                            base: "8px",
+                            "margin-desktop": "48px",
+                            "margin-mobile": "16px",
+                        },
+                        fontFamily: {
+                            "headline-md": ["Syne"],
+                            "label-md": ["Plus Jakarta Sans"],
+                            "headline-lg-mobile": ["Syne"],
+                            "display-lg": ["Syne"],
+                            "body-lg": ["Plus Jakarta Sans"],
+                            "body-md": ["Plus Jakarta Sans"],
+                            "headline-lg": ["Syne"],
+                        },
+                        fontSize: {
+                            "headline-md": [
+                                "24px",
+                                { lineHeight: "1.3", fontWeight: "700" },
+                            ],
+                            "label-md": [
+                                "14px",
+                                {
+                                    lineHeight: "1.2",
+                                    letterSpacing: "0.05em",
+                                    fontWeight: "600",
+                                },
+                            ],
+                            "headline-lg-mobile": [
+                                "32px",
+                                { lineHeight: "1.2", fontWeight: "700" },
+                            ],
+                            "display-lg": [
+                                "64px",
+                                {
+                                    lineHeight: "1.1",
+                                    letterSpacing: "-0.02em",
+                                    fontWeight: "800",
+                                },
+                            ],
+                            "body-lg": [
+                                "18px",
+                                { lineHeight: "1.6", fontWeight: "400" },
+                            ],
+                            "body-md": [
+                                "16px",
+                                { lineHeight: "1.6", fontWeight: "400" },
+                            ],
+                            "headline-lg": [
+                                "40px",
+                                { lineHeight: "1.2", fontWeight: "700" },
+                            ],
+                        },
+                    },
+                },
+            };
+        </script>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link
+            crossorigin=""
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Syne:wght@400..800&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+
+            .glass-panel {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            }
+
+            .neon-glow {
+                text-shadow:
+                    0 0 10px rgba(0, 255, 157, 0.5),
+                    0 0 20px rgba(0, 255, 157, 0.3);
+            }
+
+            .bg-glow {
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(
+                    circle,
+                    rgba(0, 255, 157, 0.15) 0%,
+                    rgba(19, 19, 19, 0) 70%
+                );
+                top: -200px;
+                right: -100px;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: -1;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden relative"
+    >
+        <div class="bg-glow"></div>
+        <!-- SideNavBar (Desktop) -->
+        <nav
+            class="hidden md:flex flex-col p-6 gap-4 bg-surface-container-low/90 backdrop-blur-2xl border-r border-outline-variant/20 shadow-2xl fixed left-0 top-0 h-full w-64 z-50"
+        >
+            <div class="flex items-center gap-4 mb-8">
+                <img
+                    class="w-12 h-12 rounded-full border-2 border-primary-container object-cover"
+                    data-alt="A small, circular avatar image of a modern, stylish musician, wearing glowing neon accessories, shot in a dark, atmospheric studio setting with strong rim lighting. High contrast, premium feel."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbPE6-IW51jpDz8bLXgJc05z5cDZkfEIntCrND5D7lNBsTzul0s6xocAvFNQwNFto_KWzMnYtsqj9hZOBBQflZ5komGQxj9kO856f7j2FTVVBTvC2feRN8h6rI8tqoapSjRHwnwITHUve9TamGX76s58wpuNbhw7asgsdhjXrVaWTwm6FypFHFrB0Y1H4cjErNSSP7aL3yPwyUXp-Q1sGR_nhZ9YQDt9mo4PwfP-Hooizf1wRLzioqvf9s3_od-rUR3m6Dr9ulsuAf"
+                />
+                <div>
+                    <h1
+                        class="font-headline-md text-headline-md text-primary-fixed m-0 leading-none"
+                    >
+                        Artist Studio
+                    </h1>
+                    <span
+                        class="font-label-md text-label-md text-on-surface-variant"
+                        >Creator Pro</span
+                    >
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 flex-grow">
+                <!-- Dashboard (Active) -->
+                <a
+                    class="flex items-center gap-3 p-3 bg-primary-container text-on-primary-container rounded-xl font-bold transition-all duration-300 ease-in-out font-label-md text-label-md"
+                    href="#"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >dashboard</span
+                    >
+                    Dashboard
+                </a>
+                <a
+                    class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl transition-all duration-300 ease-in-out font-label-md text-label-md"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">monitoring</span>
+                    Analytics
+                </a>
+                <a
+                    class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl transition-all duration-300 ease-in-out font-label-md text-label-md"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">library_music</span>
+                    My Releases
+                </a>
+                <a
+                    class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl transition-all duration-300 ease-in-out font-label-md text-label-md"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">payments</span>
+                    Revenue
+                </a>
+                <a
+                    class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl transition-all duration-300 ease-in-out font-label-md text-label-md"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">campaign</span>
+                    Promote
+                </a>
+            </div>
+            <button
+                class="w-full bg-primary-container text-on-primary-container py-3 rounded-xl font-label-md text-label-md font-bold mt-auto mb-4 hover:brightness-110 transition-all shadow-[0_0_15px_rgba(0,255,157,0.3)]"
+            >
+                Upload New Track
+            </button>
+            <div
+                class="flex flex-col gap-2 pt-4 border-t border-outline-variant/20"
+            >
+                <a
+                    class="flex items-center gap-3 p-2 text-on-surface-variant hover:text-primary-fixed transition-colors font-label-md text-label-md"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">help</span>
+                    Support
+                </a>
+                <a
+                    class="flex items-center gap-3 p-2 text-on-surface-variant hover:text-error transition-colors font-label-md text-label-md"
+                    href="#"
+                >
+                    <span class="material-symbols-outlined">logout</span>
+                    Logout
+                </a>
+            </div>
+        </nav>
+        <!-- BottomNavBar (Mobile) -->
+        <nav
+            class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-2 md:hidden bg-background/90 backdrop-blur-xl rounded-t-xl border-t border-primary-fixed/30 shadow-[0_-8px_24px_rgba(0,227,139,0.15)]"
+        >
+            <a
+                class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl p-2 px-4 active:scale-90 transition-all"
+                href="#"
+            >
+                <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >dashboard</span
+                >
+                <span class="font-label-md text-label-md mt-1">Dashboard</span>
+            </a>
+            <a
+                class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all"
+                href="#"
+            >
+                <span class="material-symbols-outlined">monitoring</span>
+                <span class="font-label-md text-label-md mt-1">Analytics</span>
+            </a>
+            <a
+                class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all"
+                href="#"
+            >
+                <span class="material-symbols-outlined">payments</span>
+                <span class="font-label-md text-label-md mt-1">Revenue</span>
+            </a>
+            <a
+                class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all"
+                href="#"
+            >
+                <span class="material-symbols-outlined">person</span>
+                <span class="font-label-md text-label-md mt-1">Profile</span>
+            </a>
+        </nav>
+        <!-- Main Content -->
+        <main
+            class="md:ml-64 p-margin-mobile md:p-margin-desktop min-h-screen pb-32 md:pb-margin-desktop"
+        >
+            <header class="mb-12 flex justify-between items-end">
+                <div>
+                    <h2
+                        class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-fixed mb-2 neon-glow"
+                    >
+                        Overview
+                    </h2>
+                    <p
+                        class="font-body-lg text-body-lg text-on-surface-variant"
+                    >
+                        Your performance for the last 30 days.
+                    </p>
+                </div>
+                <div class="hidden md:flex gap-4">
+                    <button
+                        class="glass-panel p-3 rounded-full hover:bg-surface-container-highest transition-colors flex items-center justify-center text-on-surface"
+                    >
+                        <span class="material-symbols-outlined"
+                            >notifications</span
+                        >
+                    </button>
+                    <button
+                        class="glass-panel p-3 rounded-full hover:bg-surface-container-highest transition-colors flex items-center justify-center text-on-surface"
+                    >
+                        <span class="material-symbols-outlined">settings</span>
+                    </button>
+                </div>
+            </header>
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <!-- Balance Card -->
+                <div
+                    class="glass-panel rounded-xl p-8 col-span-1 md:col-span-8 flex flex-col justify-between relative overflow-hidden group"
+                >
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 blur-[50px] rounded-full -translate-y-1/2 translate-x-1/4"
+                    ></div>
+                    <div
+                        class="flex justify-between items-start mb-12 relative z-10"
+                    >
+                        <div>
+                            <h3
+                                class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-2"
+                            >
+                                Available Balance
+                            </h3>
+                            <div
+                                class="font-display-lg text-display-lg text-primary-container font-bold neon-glow leading-none"
+                            >
+                                $24,500<span
+                                    class="text-3xl text-on-surface-variant ml-2"
+                                    >.00</span
+                                >
+                            </div>
+                        </div>
+                        <div
+                            class="p-3 bg-surface-container rounded-lg border border-outline-variant/30 text-primary-container"
+                        >
+                            <span class="material-symbols-outlined text-3xl"
+                                >account_balance_wallet</span
+                            >
+                        </div>
+                    </div>
+                    <div class="flex gap-4 relative z-10">
+                        <button
+                            class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-md text-label-md font-bold hover:brightness-110 transition-all flex items-center gap-2"
+                        >
+                            <span class="material-symbols-outlined"
+                                >account_balance</span
+                            >
+                            Withdraw Funds
+                        </button>
+                        <button
+                            class="px-6 py-3 rounded-xl font-label-md text-label-md font-bold border border-primary-container text-primary-container hover:bg-primary-container/10 transition-all flex items-center gap-2"
+                        >
+                            <span class="material-symbols-outlined"
+                                >receipt_long</span
+                            >
+                            Statements
+                        </button>
+                    </div>
+                </div>
+                <!-- Streams Card -->
+                <div
+                    class="glass-panel rounded-xl p-6 col-span-1 md:col-span-4 flex flex-col justify-between"
+                >
+                    <div class="flex justify-between items-start mb-6">
+                        <h3
+                            class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider"
+                        >
+                            Total Streams
+                        </h3>
+                        <span
+                            class="material-symbols-outlined text-secondary-container"
+                            >spatial_audio</span
+                        >
+                    </div>
+                    <div>
+                        <div
+                            class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface mb-2"
+                        >
+                            1.2M
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-primary-container font-label-md text-label-md"
+                        >
+                            <span class="material-symbols-outlined text-sm"
+                                >trending_up</span
+                            >
+                            <span>+15.4% this month</span>
+                        </div>
+                    </div>
+                    <!-- Abstract simple chart representation using divs -->
+                    <div
+                        class="mt-6 flex items-end gap-2 h-16 w-full opacity-60"
+                    >
+                        <div
+                            class="w-full bg-secondary-container/20 h-[30%] rounded-t-sm"
+                        ></div>
+                        <div
+                            class="w-full bg-secondary-container/30 h-[45%] rounded-t-sm"
+                        ></div>
+                        <div
+                            class="w-full bg-secondary-container/40 h-[25%] rounded-t-sm"
+                        ></div>
+                        <div
+                            class="w-full bg-secondary-container/50 h-[60%] rounded-t-sm"
+                        ></div>
+                        <div
+                            class="w-full bg-secondary-container/70 h-[50%] rounded-t-sm"
+                        ></div>
+                        <div
+                            class="w-full bg-secondary-container/90 h-[80%] rounded-t-sm"
+                        ></div>
+                        <div
+                            class="w-full bg-secondary-container h-[100%] rounded-t-sm shadow-[0_0_10px_rgba(255,86,44,0.5)]"
+                        ></div>
+                    </div>
+                </div>
+                <!-- Recent Transactions List -->
+                <div
+                    class="glass-panel rounded-xl p-6 col-span-1 md:col-span-6"
+                >
+                    <div class="flex justify-between items-center mb-6">
+                        <h3
+                            class="font-headline-md text-headline-md text-on-surface"
+                        >
+                            Recent Activity
+                        </h3>
+                        <a
+                            class="font-label-md text-label-md text-primary-fixed hover:underline"
+                            href="#"
+                            >View All</a
+                        >
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <!-- Transaction Item -->
+                        <div
+                            class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg border border-outline-variant/10 hover:bg-surface-container transition-colors group"
+                        >
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary-container group-hover:shadow-[0_0_10px_rgba(255,221,86,0.3)] transition-shadow"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[20px]"
+                                        >music_note</span
+                                    >
+                                </div>
+                                <div>
+                                    <h4
+                                        class="font-body-md text-body-md font-bold text-on-surface"
+                                    >
+                                        Royalties - Apple Music
+                                    </h4>
+                                    <p
+                                        class="font-label-md text-label-md text-on-surface-variant"
+                                    >
+                                        Today, 09:41 AM
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div
+                                    class="font-body-md text-body-md font-bold text-primary-container"
+                                >
+                                    +$1,250.00
+                                </div>
+                                <span
+                                    class="px-2 py-0.5 rounded-full bg-primary-container/10 text-primary-container text-xs font-bold border border-primary-container/20"
+                                    >Completed</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Transaction Item -->
+                        <div
+                            class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg border border-outline-variant/10 hover:bg-surface-container transition-colors group"
+                        >
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-container group-hover:shadow-[0_0_10px_rgba(255,86,44,0.3)] transition-shadow"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[20px]"
+                                        >shopping_cart</span
+                                    >
+                                </div>
+                                <div>
+                                    <h4
+                                        class="font-body-md text-body-md font-bold text-on-surface"
+                                    >
+                                        Merch Store Payout
+                                    </h4>
+                                    <p
+                                        class="font-label-md text-label-md text-on-surface-variant"
+                                    >
+                                        Yesterday
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div
+                                    class="font-body-md text-body-md font-bold text-primary-container"
+                                >
+                                    +$450.50
+                                </div>
+                                <span
+                                    class="px-2 py-0.5 rounded-full bg-primary-container/10 text-primary-container text-xs font-bold border border-primary-container/20"
+                                    >Completed</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Transaction Item -->
+                        <div
+                            class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg border border-outline-variant/10 hover:bg-surface-container transition-colors group"
+                        >
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-[20px]"
+                                        >account_balance</span
+                                    >
+                                </div>
+                                <div>
+                                    <h4
+                                        class="font-body-md text-body-md font-bold text-on-surface"
+                                    >
+                                        Bank Withdrawal
+                                    </h4>
+                                    <p
+                                        class="font-label-md text-label-md text-on-surface-variant"
+                                    >
+                                        Oct 12, 2023
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div
+                                    class="font-body-md text-body-md font-bold text-on-surface"
+                                >
+                                    - $5,000.00
+                                </div>
+                                <span
+                                    class="px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant text-xs font-bold"
+                                    >Processed</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top Tracks Promo -->
+                <div
+                    class="glass-panel rounded-xl p-0 col-span-1 md:col-span-6 overflow-hidden relative min-h-[300px] flex items-end"
+                >
+                    <div
+                        class="absolute inset-0 bg-cover bg-center opacity-40 z-0"
+                        data-alt="A vibrant, moody concert photograph from behind a silhouette of an artist on stage, looking out into a massive crowd illuminated by bright, electric green neon lights and lasers. Atmospheric fog and high energy."
+                        style="
+                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDfPgDhbCMieCCQ8WZ9DhNeLmHJ1m9q1N3xPQSwyOUymdi9D0Wb2eoq3OqO1LEmNAQgiJ538zsxytOwNeTs0j2ymS7yLiX0_pg2-u3Wt51gaBRXYUAYz6Dl808Y-J8s3yJP8Ute1xRP1UKkxNM5WMSQWF1sfaNu0ASjR6t6dggONzKQT_kgKVwrQNiYRDlScoBRyRnF_sOdpQ-_AkuB-G55FQhDLNQPc3yGzRqe4KYimdbEsn_-wXw_dtzrvxz1mYao_-hHyqIwViYh&quot;);
+                        "
+                    ></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent z-10"
+                    ></div>
+                    <div class="relative z-20 p-8 w-full">
+                        <span
+                            class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-bold text-xs uppercase tracking-widest mb-4 inline-block shadow-[0_0_15px_rgba(255,225,112,0.4)]"
+                            >Top Performing Track</span
+                        >
+                        <h3
+                            class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold mb-2"
+                        >
+                            Midnight Sahel
+                        </h3>
+                        <p
+                            class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-md"
+                        >
+                            Currently trending #1 on the Afrobeats charts.
+                            Consider launching a new promotional campaign to
+                            capitalize on momentum.
+                        </p>
+                        <button
+                            class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-md text-label-md font-bold hover:brightness-110 transition-all flex items-center gap-2 w-max"
+                        >
+                            <span class="material-symbols-outlined"
+                                >campaign</span
+                            >
+                            Boost Track
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

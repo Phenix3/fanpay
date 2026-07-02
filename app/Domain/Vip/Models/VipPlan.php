@@ -40,6 +40,6 @@ class VipPlan extends Model
 
     public function subscriptions(): HasMany
     {
-        return $this->hasMany(VipSubscription::class);
+        return $this->hasMany(VipSubscription::class, 'plan_id');
     }
 }

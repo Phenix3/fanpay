@@ -1,0 +1,806 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Electric Boutique &amp; Billetterie</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&amp;family=Syne:wght@700;800&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "on-secondary-fixed-variant": "#8a1d00",
+                            "on-secondary-container": "#560e00",
+                            "on-primary-container": "#007143",
+                            background: "#131313",
+                            "on-error-container": "#ffdad6",
+                            "tertiary-fixed": "#ffe170",
+                            "surface-container-highest": "#353534",
+                            "on-secondary": "#621100",
+                            "surface-container": "#201f1f",
+                            "on-surface": "#e5e2e1",
+                            "on-secondary-fixed": "#3c0700",
+                            "primary-container": "#00ff9d",
+                            "surface-container-low": "#1c1b1b",
+                            primary: "#f4fff3",
+                            "on-error": "#690005",
+                            "on-background": "#e5e2e1",
+                            "tertiary-container": "#ffdd56",
+                            "surface-container-lowest": "#0e0e0e",
+                            "on-surface-variant": "#b9cbbc",
+                            tertiary: "#fffbf9",
+                            "primary-fixed-dim": "#00e38b",
+                            "on-tertiary-container": "#746100",
+                            surface: "#131313",
+                            "on-tertiary": "#3a3000",
+                            "inverse-primary": "#006d40",
+                            "surface-bright": "#3a3939",
+                            "on-primary-fixed": "#002110",
+                            "on-primary-fixed-variant": "#00522f",
+                            "outline-variant": "#3b4a3f",
+                            "on-primary": "#00391f",
+                            "secondary-container": "#ff562c",
+                            "surface-variant": "#353534",
+                            "secondary-fixed": "#ffdad2",
+                            "on-tertiary-fixed-variant": "#544600",
+                            "on-tertiary-fixed": "#221b00",
+                            outline: "#849587",
+                            error: "#ffb4ab",
+                            secondary: "#ffb4a2",
+                            "surface-container-high": "#2a2a2a",
+                            "error-container": "#93000a",
+                            "inverse-surface": "#e5e2e1",
+                            "surface-dim": "#131313",
+                            "primary-fixed": "#56ffa8",
+                            "surface-tint": "#00e38b",
+                            "inverse-on-surface": "#313030",
+                            "secondary-fixed-dim": "#ffb4a2",
+                            "tertiary-fixed-dim": "#e9c400",
+                        },
+                        borderRadius: {
+                            DEFAULT: "1rem",
+                            lg: "2rem",
+                            xl: "3rem",
+                            full: "9999px",
+                        },
+                        spacing: {
+                            gutter: "24px",
+                            "container-max": "1440px",
+                            base: "8px",
+                            "margin-desktop": "48px",
+                            "margin-mobile": "16px",
+                        },
+                        fontFamily: {
+                            "headline-md": ["Syne"],
+                            "label-md": ["Plus Jakarta Sans"],
+                            "headline-lg-mobile": ["Syne"],
+                            "display-lg": ["Syne"],
+                            "body-lg": ["Plus Jakarta Sans"],
+                            "body-md": ["Plus Jakarta Sans"],
+                            "headline-lg": ["Syne"],
+                        },
+                        fontSize: {
+                            "headline-md": [
+                                "24px",
+                                { lineHeight: "1.3", fontWeight: "700" },
+                            ],
+                            "label-md": [
+                                "14px",
+                                {
+                                    lineHeight: "1.2",
+                                    letterSpacing: "0.05em",
+                                    fontWeight: "600",
+                                },
+                            ],
+                            "headline-lg-mobile": [
+                                "32px",
+                                { lineHeight: "1.2", fontWeight: "700" },
+                            ],
+                            "display-lg": [
+                                "64px",
+                                {
+                                    lineHeight: "1.1",
+                                    letterSpacing: "-0.02em",
+                                    fontWeight: "800",
+                                },
+                            ],
+                            "body-lg": [
+                                "18px",
+                                { lineHeight: "1.6", fontWeight: "400" },
+                            ],
+                            "body-md": [
+                                "16px",
+                                { lineHeight: "1.6", fontWeight: "400" },
+                            ],
+                            "headline-lg": [
+                                "40px",
+                                { lineHeight: "1.2", fontWeight: "700" },
+                            ],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .glass-panel {
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .glow-border:hover,
+            .glow-focus:focus-within {
+                border-color: #56ffa8;
+                box-shadow: 0 0 15px rgba(86, 255, 168, 0.4);
+            }
+            .neon-text-primary {
+                text-shadow: 0 0 10px rgba(86, 255, 168, 0.5);
+            }
+            .bg-radial-gradient {
+                background:
+                    radial-gradient(
+                        circle at top right,
+                        rgba(0, 227, 139, 0.15),
+                        transparent 40%
+                    ),
+                    radial-gradient(
+                        circle at bottom left,
+                        rgba(255, 86, 44, 0.1),
+                        transparent 40%
+                    );
+            }
+
+            /* Custom Scrollbar for a premium feel */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #0e0e0e;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #353534;
+                border-radius: 10px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #00e38b;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed"
+    >
+        <!-- Atmospheric Background -->
+        <div
+            class="fixed inset-0 z-[-1] bg-radial-gradient pointer-events-none"
+        ></div>
+        <!-- Top Navigation (Web) -->
+        <nav
+            class="hidden md:flex justify-between items-center px-margin-desktop h-20 bg-background/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm fixed top-0 w-full z-50 transition-all duration-300"
+        >
+            <div class="flex items-center gap-4">
+                <span
+                    class="font-headline-md text-headline-md font-bold text-primary-fixed neon-text-primary tracking-tight"
+                    >MboaSound</span
+                >
+            </div>
+            <div class="flex gap-8 items-center">
+                <a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95"
+                    href="#"
+                    >Explorer</a
+                >
+                <a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95"
+                    href="#"
+                    >SuperVote</a
+                >
+                <a
+                    class="font-label-md text-label-md text-primary-fixed border-b-2 border-primary-fixed pb-1 active:scale-95 transition-transform"
+                    href="#"
+                    >Boutique</a
+                >
+            </div>
+            <div class="flex items-center gap-6">
+                <!-- Search Bar -->
+                <div
+                    class="relative group glow-focus rounded-full transition-all duration-300"
+                >
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary-fixed transition-colors"
+                        >search</span
+                    >
+                    <input
+                        class="glass-panel font-body-md text-body-md text-on-background pl-12 pr-4 py-2 rounded-full w-64 focus:outline-none focus:ring-0 placeholder-on-surface-variant/50 transition-all duration-300 bg-transparent border-outline-variant/30"
+                        placeholder="Search albums, tickets..."
+                        type="text"
+                    />
+                </div>
+                <button
+                    class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        style="font-variation-settings: &quot;FILL&quot; 0"
+                        >notifications</span
+                    >
+                </button>
+                <button
+                    class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        style="font-variation-settings: &quot;FILL&quot; 0"
+                        >settings</span
+                    >
+                </button>
+                <div
+                    class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/30 overflow-hidden cursor-pointer hover:border-primary-fixed transition-colors"
+                >
+                    <img
+                        alt="Artist profile avatar"
+                        class="w-full h-full object-cover"
+                        data-alt="A stylized, neon-lit digital avatar of a young musician wearing futuristic headphones, set against a dark, cyberpunk-inspired cityscape background with vibrant green and purple light leaks. The aesthetic is highly detailed, modern, and energetic, fitting a premium music platform."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZVcV6pTGHi3lc0zR0pudcTO6vnRzyaoD0ciI7aa7hxvr2ItB7yiuITRLky5zoaFmrlqwDadCIdwICe7N9gw2f_BqASUQtAmqUirhCBIBEnVQgLi0NoGvkZEM4s6NEjK99xXIemnmCyBiKkrllTXYuvmu8xC0gmcBpmnS7XwBed3UfOnj66IogvEardh-6FGJG6yqEHDd5d5s8iO_r9r2JDvfq12ddh8Dv1MX8qklAsrRCVa8kz0jE8f9V5MaW-qDDd99nEgMNKtEW"
+                    />
+                </div>
+            </div>
+        </nav>
+        <!-- Main Content -->
+        <main
+            class="flex-grow pt-24 md:pt-32 pb-32 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-12 md:gap-16"
+        >
+            <!-- Header Section -->
+            <header class="flex flex-col gap-6 md:gap-8 items-start">
+                <div class="flex flex-col gap-2">
+                    <h1
+                        class="font-display-lg text-display-lg text-on-background tracking-tight"
+                    >
+                        Electric
+                        <span class="text-primary-fixed neon-text-primary"
+                            >Boutique</span
+                        >
+                    </h1>
+                    <p
+                        class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl"
+                    >
+                        Exclusive releases, VIP tickets, and high-octane
+                        merchandise. Secure your spot in the Cyber-Sahel
+                        revolution.
+                    </p>
+                </div>
+                <!-- Mobile Search (Visible only on small screens) -->
+                <div
+                    class="w-full md:hidden relative group glow-focus rounded-full transition-all duration-300 mt-4"
+                >
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary-fixed transition-colors"
+                        >search</span
+                    >
+                    <input
+                        class="glass-panel font-body-md text-body-md text-on-background pl-12 pr-4 py-3 rounded-full w-full focus:outline-none focus:ring-0 placeholder-on-surface-variant/50 transition-all duration-300 bg-transparent border-outline-variant/30"
+                        placeholder="Search..."
+                        type="text"
+                    />
+                </div>
+                <!-- Category Filters -->
+                <div
+                    class="flex gap-4 overflow-x-auto pb-4 w-full scrollbar-hide snap-x"
+                >
+                    <button
+                        class="snap-start whitespace-nowrap px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md transition-transform hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(86,255,168,0.3)]"
+                    >
+                        All Items
+                    </button>
+                    <button
+                        class="snap-start whitespace-nowrap px-6 py-2 rounded-full glass-panel text-on-surface hover:text-primary-fixed font-label-md text-label-md transition-all hover:bg-surface-container-high active:scale-95"
+                    >
+                        Albums &amp; Vinyl
+                    </button>
+                    <button
+                        class="snap-start whitespace-nowrap px-6 py-2 rounded-full glass-panel text-on-surface hover:text-primary-fixed font-label-md text-label-md transition-all hover:bg-surface-container-high active:scale-95"
+                    >
+                        Concert Tickets
+                    </button>
+                    <button
+                        class="snap-start whitespace-nowrap px-6 py-2 rounded-full glass-panel text-on-surface hover:text-primary-fixed font-label-md text-label-md transition-all hover:bg-surface-container-high active:scale-95"
+                    >
+                        Merch
+                    </button>
+                </div>
+            </header>
+            <!-- Featured / Trending Grid (Bento Style) -->
+            <section
+                class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]"
+            >
+                <!-- Hero Item (Spans 2 rows, 8 cols on desktop) -->
+                <article
+                    class="md:col-span-8 md:row-span-2 glass-panel rounded-3xl overflow-hidden relative group cursor-pointer glow-border transition-all duration-500"
+                >
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent z-10"
+                    ></div>
+                    <div
+                        class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        data-alt="A massive, high-energy live concert crowd seen from behind the DJ booth. Vibrant laser lights in neon green and fiery orange pierce through thick stage smoke. The atmosphere is electric, chaotic, and euphoric, capturing the peak moment of an electronic music festival in a dark, atmospheric setting."
+                        style="
+                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDlEcdUrRBTIpR_6_oUwTIwPjG3qePTf09kQsxXfLXCjTMll-e05TQDmg5uzNOO7gaWA2RMxsJap3xMWUlTdwIeIdYXD2laAm6hP62cMf56KLpglLv7aa5HrTV3wMdzX8yPPu0ugHZoDTxfZH2TP5UVDBtEdCzbzjOalVGyIre-AxmwhpxTEk2xR0JRZq2AIUTHkxBuD4iicEhd-nre6g24gCT97ODo4lLnaSXpgL5ZAvbZfWwCtJZe71jS9hNb7zNI8RXf_QJ_xuo5&quot;);
+                        "
+                    ></div>
+                    <div
+                        class="absolute inset-0 z-20 p-8 flex flex-col justify-between"
+                    >
+                        <div class="flex justify-between items-start">
+                            <span
+                                class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider backdrop-blur-md bg-opacity-90 shadow-[0_0_10px_rgba(255,86,44,0.5)]"
+                                >Hot Ticket</span
+                            >
+                            <button
+                                class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors text-on-surface"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >favorite</span
+                                >
+                            </button>
+                        </div>
+                        <div class="flex flex-col gap-4 max-w-xl">
+                            <div>
+                                <h2
+                                    class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-fixed neon-text-primary mb-2"
+                                >
+                                    Yaoundé Cyber-Fest 2024
+                                </h2>
+                                <p
+                                    class="font-body-lg text-body-lg text-on-surface-variant line-clamp-2"
+                                >
+                                    The ultimate fusion of Makossa rhythms and
+                                    synthesized basslines. VIP Access includes
+                                    backstage pass and exclusive vinyl.
+                                </p>
+                            </div>
+                            <div class="flex items-end justify-between mt-4">
+                                <div class="flex flex-col">
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider"
+                                        >Starting at</span
+                                    >
+                                    <span
+                                        class="font-display-lg text-display-lg text-on-background"
+                                        >45,000<span
+                                            class="text-headline-md text-primary-fixed"
+                                        >
+                                            FCFA</span
+                                        ></span
+                                    >
+                                </div>
+                                <button
+                                    class="bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-primary-fixed-dim transition-all shadow-[0_0_20px_rgba(86,255,168,0.4)] active:scale-95 flex items-center gap-2"
+                                >
+                                    <span
+                                        class="material-symbols-outlined"
+                                        style="
+                                            font-variation-settings: &quot;FILL&quot;
+                                                1;
+                                        "
+                                        >confirmation_number</span
+                                    >
+                                    Get Tickets
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Secondary Item 1 (Spans 1 row, 4 cols) -->
+                <article
+                    class="md:col-span-4 glass-panel rounded-3xl overflow-hidden relative group cursor-pointer glow-border transition-all duration-500 flex flex-col"
+                >
+                    <div class="h-48 relative overflow-hidden shrink-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"
+                        ></div>
+                        <div
+                            class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            data-alt="A sleek, futuristic vinyl record player spinning a glowing translucent neon green record. The device is set on a dark, textured surface illuminated by soft, ambient studio lighting. The style is hyper-realistic, premium, and emphasizes the tactile nature of modern audio equipment."
+                            style="
+                                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCMNGOU5rfYzc7uLGv2yJA_5Itl9aV3UNVHLVOfFeeCVuxP5-hwuvUbgyWSA6pEDeO_6DfmB2H5OK6h1rTyl93F_VNfBl8gMwRXubHEJ9GYIBxyEnTP5q0-lu_ypDCXxYT-A3QzTQDI-C8nRziYAUDlBRiUler5eGeVJ_jOscQ-SO51Lsaesur0q6ObFXpsoGNGPnW7cflNpNX0CcEDuLRyMDN8DXmo2Yz3xmzAXljVUHu-zrCHKes7BGWpTilkXZ5s2Oe9Y5r7tw_N&quot;);
+                            "
+                        ></div>
+                        <span
+                            class="absolute top-4 left-4 z-20 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider shadow-[0_0_10px_rgba(255,221,86,0.5)]"
+                            >New Release</span
+                        >
+                    </div>
+                    <div
+                        class="p-6 flex-grow flex flex-col justify-between z-20 bg-surface-container-low/80 backdrop-blur-md"
+                    >
+                        <div>
+                            <h3
+                                class="font-headline-md text-headline-md text-on-background mb-1 group-hover:text-primary-fixed transition-colors"
+                            >
+                                Neon Sahel Vol. 1
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant"
+                            >
+                                Limited Edition Vinyl
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <span
+                                class="font-headline-md text-headline-md text-primary-fixed"
+                                >15,000 FCFA</span
+                            >
+                            <button
+                                class="w-10 h-10 rounded-full border border-primary-fixed text-primary-fixed flex items-center justify-center hover:bg-primary-fixed hover:text-on-primary-fixed transition-all"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >shopping_cart</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!-- Secondary Item 2 (Spans 1 row, 4 cols) -->
+                <article
+                    class="md:col-span-4 glass-panel rounded-3xl overflow-hidden relative group cursor-pointer transition-all duration-500 flex flex-col opacity-75 grayscale-[30%] hover:grayscale-0 hover:opacity-100"
+                >
+                    <div class="h-48 relative overflow-hidden shrink-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"
+                        ></div>
+                        <div
+                            class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            data-alt="A dramatic portrait of a contemporary African music artist wearing an intricate, illuminated tech-wear jacket. The background is completely dark, focusing entirely on the intricate details of the clothing and the artist's intense expression. Lighting is sharp and cinematic, with strong rim lights."
+                            style="
+                                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBktlNvo_ChZDI25rrA127ye_p9rIdQiL40poq-cyOwBMwV663ACM-RdeiJbRjGAo7leUpUTSA5epB1VzjtMPp4GI5PQ80Td_fFECDfsU8xe79C7MHJG1y5xdGOlX7G8X9jAm1WSVyhdvEZcJMf-_5wTuGH5UxQHB7aqd2yd-qgH6VCwcErEHPmHin0WXSzZ6pOCJQlLcenY9YkHqvwJysTm-rwAGdsaQYveUDFqPU2Aat2l_TTCRgh4-idaeTtcmAUoWqnIqhRr8l7&quot;);
+                            "
+                        ></div>
+                        <span
+                            class="absolute top-4 left-4 z-20 bg-error text-on-error px-3 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider shadow-[0_0_10px_rgba(255,180,171,0.5)]"
+                            >Sold Out</span
+                        >
+                    </div>
+                    <div
+                        class="p-6 flex-grow flex flex-col justify-between z-20 bg-surface-container-low/80 backdrop-blur-md"
+                    >
+                        <div>
+                            <h3
+                                class="font-headline-md text-headline-md text-on-background mb-1"
+                            >
+                                Artist Signature Jacket
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant"
+                            >
+                                Exclusive Merch Drop
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <span
+                                class="font-headline-md text-headline-md text-on-surface-variant line-through"
+                                >35,000 FCFA</span
+                            >
+                            <button
+                                class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface-variant font-label-md text-label-md cursor-not-allowed"
+                            >
+                                Waitlist
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- Catalog Grid -->
+            <section class="flex flex-col gap-8 mt-8">
+                <div
+                    class="flex justify-between items-end border-b border-outline-variant/20 pb-4"
+                >
+                    <h2
+                        class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background"
+                    >
+                        Latest Drops
+                    </h2>
+                    <a
+                        class="font-label-md text-label-md text-primary-fixed hover:text-primary-fixed-dim transition-colors flex items-center gap-1"
+                        href="#"
+                    >
+                        View All
+                        <span class="material-symbols-outlined text-[18px]"
+                            >arrow_forward</span
+                        >
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Catalog Item 1 -->
+                    <article
+                        class="glass-panel rounded-2xl p-4 flex flex-col gap-4 group hover:bg-surface-container-high transition-colors glow-border"
+                    >
+                        <div
+                            class="aspect-square rounded-xl overflow-hidden relative"
+                        >
+                            <div
+                                class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Abstract 3D rendering of soundwaves converging into a glowing sphere. The color palette features deep blacks, vibrant neon greens, and subtle hints of yellow. The aesthetic is extremely polished, smooth, and represents high-fidelity digital audio."
+                                style="
+                                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAVK2JtXIO4sjyJwFGUPl1qNn5whjRo-b48AgsF9s1duuCfDF9Oso8CcwF7TU1CQx2-yTc5Hg-SFRlMxvln107nNw3mMYJFI25vs0Jl0CN2L-IjWbUmu06SBaYcvXAsToKcJi0-YVII-lOcPUZRk_7MFij_aB6e9qILQUYUxx5c-f4r6jcAvqHEwFhKpDlyib7cLKrR5qLvPQ9A_rSH0rW8Za7pKhiPXXa1jNvAZ357HRcsCJBKzHHuYYP3eaKGWLdLhQRwnpIPtcGQ&quot;);
+                                "
+                            ></div>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h3
+                                class="font-label-md text-label-md text-on-background truncate group-hover:text-primary-fixed transition-colors"
+                            >
+                                Digital EP: Synapse
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant text-sm truncate"
+                            >
+                                Various Artists
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span
+                                class="font-headline-md text-headline-md text-on-background text-lg"
+                                >5,000 FCFA</span
+                            >
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant text-on-surface flex items-center justify-center group-hover:border-primary-fixed group-hover:text-primary-fixed transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >add</span
+                                >
+                            </button>
+                        </div>
+                    </article>
+                    <!-- Catalog Item 2 -->
+                    <article
+                        class="glass-panel rounded-2xl p-4 flex flex-col gap-4 group hover:bg-surface-container-high transition-colors glow-border"
+                    >
+                        <div
+                            class="aspect-square rounded-xl overflow-hidden relative"
+                        >
+                            <div
+                                class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="A close-up shot of a stylized, matte black concert wristband with glowing orange circuitry patterns embedded in the fabric. The wristband rests on a dark, reflective surface, suggesting a premium, high-tech VIP experience."
+                                style="
+                                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAPvEEGmm_75bTacSeghVpcU_vGMx9mKH9T8eCGbXzS9g7aFQ3MQeoYHm_FZozconD4tXKstTbTGGrwcCsuac5T9Inx5tfP5wJwxYkzBuN3K78xtR-q5a9hYcBBl4KVXcV0i2FrhomV5MPY63ffFHtRIHYeG-0PU5-Ysrc3V_yvoYlwfa44AsMNsG4pRnqo0Y6Egz4WtnLOBxa_IXJNDl4y6rp1NNc5_tvhnP41I4WxbO4tK5nrgEbwA8RdO-ste9GUGQbA-LUV9Aq_&quot;);
+                                "
+                            ></div>
+                            <span
+                                class="absolute top-2 left-2 bg-secondary-container text-on-secondary-container text-xs px-2 py-0.5 rounded-full font-label-md uppercase tracking-wider"
+                                >Fast Track</span
+                            >
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h3
+                                class="font-label-md text-label-md text-on-background truncate group-hover:text-primary-fixed transition-colors"
+                            >
+                                VIP Weekend Pass
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant text-sm truncate"
+                            >
+                                Douala Electronic Sessions
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span
+                                class="font-headline-md text-headline-md text-on-background text-lg"
+                                >25,000 FCFA</span
+                            >
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant text-on-surface flex items-center justify-center group-hover:border-primary-fixed group-hover:text-primary-fixed transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >add</span
+                                >
+                            </button>
+                        </div>
+                    </article>
+                    <!-- Catalog Item 3 -->
+                    <article
+                        class="glass-panel rounded-2xl p-4 flex flex-col gap-4 group hover:bg-surface-container-high transition-colors glow-border"
+                    >
+                        <div
+                            class="aspect-square rounded-xl overflow-hidden relative"
+                        >
+                            <div
+                                class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="A high-quality studio shot of a heavy cotton black t-shirt featuring a bold, abstract neon green graphic on the back. The lighting is moody, highlighting the texture of the fabric and the vibrancy of the print against a completely dark background."
+                                style="
+                                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCx2fYpX_0PwsxZvJSpKfib6IGfs4g08Od1nzAp61v-ergBckjnH9NBeZpvD-05_8JBUkBUcnVKEwhZily1yhORIWUtE-8gF1EC6S3yLRpFFEzHD-f-2uwRTT5W65QX7Y94FiONgJJQUUgoAZKPfPWkOER8EP3tEMXeWe3cpQxRD--b7Bm0d2jlSWKL_vMUOIpS2zpRabvMP2Wfw_sMqPWzojJ6i02uFdiuFoevnsSFGV7wxy_q1zrRiHP-xI1qt35eqjowsgoxgqx0&quot;);
+                                "
+                            ></div>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h3
+                                class="font-label-md text-label-md text-on-background truncate group-hover:text-primary-fixed transition-colors"
+                            >
+                                MboaSound Essential Tee
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant text-sm truncate"
+                            >
+                                Apparel
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span
+                                class="font-headline-md text-headline-md text-on-background text-lg"
+                                >12,500 FCFA</span
+                            >
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant text-on-surface flex items-center justify-center group-hover:border-primary-fixed group-hover:text-primary-fixed transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >add</span
+                                >
+                            </button>
+                        </div>
+                    </article>
+                    <!-- Catalog Item 4 -->
+                    <article
+                        class="glass-panel rounded-2xl p-4 flex flex-col gap-4 group hover:bg-surface-container-high transition-colors glow-border"
+                    >
+                        <div
+                            class="aspect-square rounded-xl overflow-hidden relative"
+                        >
+                            <div
+                                class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="A beautifully designed cassette tape with a clear casing revealing glowing neon green and orange internal components. The tape is surrounded by subtle light leaks and digital artifacts, evoking a retro-futuristic, cyber-sahel aesthetic."
+                                style="
+                                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCfvCqEJYTDTqcn_q1HvhQTwnN5TewDn6HF0n6bRCsVYZisDEUbjOSmpCWxtVj6jNHVboBTLvX8RjPW1_igB1OwDFumMbs6wCLV-r-baBwcSlGLWk9DbfJe36fe0NJvOkIwb7npAQzEpLkV2_vUiA1ZMKCyUO7X85qrFD3qA4YhGY39suug0O75pWorFaz2up_UKEVHb0m-KoJCBLX30VAb89C3YaFqq62DC7X-muJlTSsJM2kne0arZAOTBtUNaArgP5OHESjK8nf1&quot;);
+                                "
+                            ></div>
+                            <span
+                                class="absolute top-2 left-2 bg-tertiary-container text-on-tertiary-container text-xs px-2 py-0.5 rounded-full font-label-md uppercase tracking-wider"
+                                >Limited</span
+                            >
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h3
+                                class="font-label-md text-label-md text-on-background truncate group-hover:text-primary-fixed transition-colors"
+                            >
+                                Mixtape: Cyber-Sahel
+                            </h3>
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant text-sm truncate"
+                            >
+                                Physical Cassette
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto">
+                            <span
+                                class="font-headline-md text-headline-md text-on-background text-lg"
+                                >8,000 FCFA</span
+                            >
+                            <button
+                                class="w-8 h-8 rounded-full bg-surface-container border border-outline-variant text-on-surface flex items-center justify-center group-hover:border-primary-fixed group-hover:text-primary-fixed transition-colors"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[18px]"
+                                    >add</span
+                                >
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <!-- Bottom Navigation (Mobile) -->
+        <nav
+            class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-2 md:hidden bg-background/90 backdrop-blur-xl border-t border-primary-fixed/30 shadow-[0_-8px_24px_rgba(0,227,139,0.15)] rounded-t-xl"
+        >
+            <a
+                class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all"
+                href="#"
+            >
+                <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: &quot;FILL&quot; 0"
+                    >explore</span
+                >
+                <span class="font-label-md text-label-md text-[10px] mt-1"
+                    >Explorer</span
+                >
+            </a>
+            <a
+                class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all"
+                href="#"
+            >
+                <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: &quot;FILL&quot; 0"
+                    >how_to_vote</span
+                >
+                <span class="font-label-md text-label-md text-[10px] mt-1"
+                    >Vote</span
+                >
+            </a>
+            <a
+                class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl p-2 px-4 active:scale-90 transition-all"
+                href="#"
+            >
+                <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >shopping_bag</span
+                >
+                <span class="font-label-md text-label-md text-[10px] mt-1"
+                    >Shop</span
+                >
+            </a>
+            <a
+                class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all"
+                href="#"
+            >
+                <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: &quot;FILL&quot; 0"
+                    >person</span
+                >
+                <span class="font-label-md text-label-md text-[10px] mt-1"
+                    >Profile</span
+                >
+            </a>
+        </nav>
+        <!-- Footer -->
+        <footer
+            class="w-full py-12 bg-surface-container-lowest border-t border-outline-variant/10 pb-32 md:pb-12"
+        >
+            <div
+                class="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-8 max-w-container-max mx-auto"
+            >
+                <div class="flex flex-col items-center md:items-start gap-2">
+                    <span
+                        class="font-headline-md text-headline-md text-primary-fixed neon-text-primary tracking-tight"
+                        >MboaSound</span
+                    >
+                    <span
+                        class="font-body-md text-body-md text-on-surface-variant text-sm text-center md:text-left"
+                        >© 2024 MboaSound Cameroon. Electric Premium
+                        Experience.</span
+                    >
+                </div>
+                <div class="flex gap-6">
+                    <a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline opacity-80 hover:opacity-100 transition-all"
+                        href="#"
+                        >Terms</a
+                    >
+                    <a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline opacity-80 hover:opacity-100 transition-all"
+                        href="#"
+                        >Privacy</a
+                    >
+                    <a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline opacity-80 hover:opacity-100 transition-all"
+                        href="#"
+                        >Artist FAQ</a
+                    >
+                    <a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline opacity-80 hover:opacity-100 transition-all"
+                        href="#"
+                        >Contact</a
+                    >
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
