@@ -31,6 +31,11 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
+
+    // Artist wallet
+    Route::livewire('artist/wallet', 'pages::artist.wallet')
+        ->middleware(['role:artist'])
+        ->name('artist.wallet');
 });
 
 require __DIR__.'/settings.php';
