@@ -31,11 +31,7 @@
                         <a
                             class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform"
                             href="#"
-                        >{{ __('messages.supervote') }}</a>
-                        <a
-                            class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform"
-                            href="#"
-                        >{{ __('messages.boutique') }}</a>
+                        >{{ __('messages.supervote') }}</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform" href="{{ route('boutique') }}" wire:navigate>{{ __('messages.boutique') }}</a>
                     </div>
                 </div>
                 <div class="flex items-center gap-6">

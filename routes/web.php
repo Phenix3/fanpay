@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
 
+// Public explore / boutique
+Route::view('/explore', 'pages::boutique')->name('boutique');
+
 // Public artist profile
 Route::get('/artists/{slug}', [\App\Http\Controllers\Web\ArtistProfileController::class, 'show'])
     ->name('artists.show');
