@@ -448,6 +448,38 @@ return [
     'artist_faq' => 'Artist FAQ',
     'contact' => 'Contact',
 
+    // Public pages — Landing Page (Hero)
+    'new_release' => 'New Release',
+    'hero_headline' => 'Vibe to the rhythm of',
+    'hero_headline_highlight' => 'the Indomitable.',
+    'hero_subtitle' => 'Discover the raw energy of the Cameroonian music scene. Listen, vote, and propel the next cyber-sahel revelation.',
+    'listen_now' => 'Listen Now',
+    'discover' => 'Discover',
+
+    // Public pages — Landing Page (Trending)
+    'trending_now' => 'Trending Now',
+    'trending_subtitle' => 'The sounds making MboaSound vibrate.',
+    'see_all' => 'See All',
+    'afrobeats' => 'Afrobeats',
+    'featured_track' => 'Yaoundé Nights',
+    'featured_artist' => 'DJ L\'Indomptable ft. Mboa Stars',
+    'track_cover' => 'Cover',
+    'track_1' => 'Makossa Cybernetic',
+    'track_1_artist' => 'Tech-Roots',
+    'track_2' => 'Electric Bikutsi Vol. 2',
+    'track_2_artist' => 'Queen F.',
+    'track_3' => 'Douala Drift',
+    'track_3_artist' => 'Le Vrai',
+
+    // Public pages — Landing Page (SuperVote)
+    'annual_event' => 'Annual Event',
+    'supervote_title' => 'SuperVote',
+    'supervote_highlight' => 'Revelation 2024',
+    'supervote_description' => 'You decide. Listen to emerging talents and vote for the artist who deserves the title of Revelation of the Year. Voting is open.',
+    'vote_now' => 'Vote Now',
+    'nominee_name' => 'Ténor Z',
+    'nominee_label' => 'Nominee #1',
+
     // Public pages — Artist Profile
     'verified_artist' => 'Verified Artist',
     'play_radio' => 'Play Radio',

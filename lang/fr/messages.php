@@ -447,6 +447,38 @@ return [
     'artist_faq' => 'FAQ Artiste',
     'contact' => 'Contact',
 
+    // Public pages — Landing Page (Hero)
+    'new_release' => 'Nouvelle Sortie',
+    'hero_headline' => 'Vibrez au rythme de',
+    'hero_headline_highlight' => "l'Indomptable.",
+    'hero_subtitle' => "Découvrez l'énergie brute de la scène musicale Camerounaise. Écoutez, votez et propulsez la prochaine révélation cyber-sahel.",
+    'listen_now' => 'Écouter Maintenant',
+    'discover' => 'Découvrir',
+
+    // Public pages — Landing Page (Trending)
+    'trending_now' => 'Tendance du moment',
+    'trending_subtitle' => 'Les sons qui font vibrer MboaSound.',
+    'see_all' => 'Voir Tout',
+    'afrobeats' => 'Afrobeats',
+    'featured_track' => 'Yaoundé Nights',
+    'featured_artist' => "DJ L'Indomptable ft. Mboa Stars",
+    'track_cover' => 'Pochette',
+    'track_1' => 'Makossa Cybernétique',
+    'track_1_artist' => 'Tech-Roots',
+    'track_2' => 'Bikutsi Électrique Vol. 2',
+    'track_2_artist' => 'Reine F.',
+    'track_3' => 'Douala Drift',
+    'track_3_artist' => 'Le Vrai',
+
+    // Public pages — Landing Page (SuperVote)
+    'annual_event' => 'Événement Annuel',
+    'supervote_title' => 'SuperVote',
+    'supervote_highlight' => 'Révélation 2024',
+    'supervote_description' => "C'est vous qui décidez. Écoutez les talents émergents et votez pour l'artiste qui mérite le titre de Révélation de l'année. Les votes sont ouverts.",
+    'vote_now' => 'Voter Maintenant',
+    'nominee_name' => 'Ténor Z',
+    'nominee_label' => 'Nominé #1',
+
     // Public pages — Artist Profile
     'verified_artist' => 'Verified Artist',
     'play_radio' => 'Play Radio',
