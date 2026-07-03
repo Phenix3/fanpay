@@ -421,6 +421,46 @@ return [
     'create_event' => 'Créer un événement',
     'confirm_delete_ticket_type' => 'Supprimer ce type de billet ?',
     'publish' => 'Publier',
+
+    // Public auth pages
+    'create_your_account' => 'Créer votre compte',
+    'prêt_à_dompter_le_rythme' => 'Prêt à dompter le rythme ?',
+    'create_my_account' => 'Créer mon compte',
+    'accept_terms' => "J'accepte les :terms et la :privacy.",
+    'terms_of_use' => "conditions d'utilisation",
+    'privacy_policy' => 'politique de confidentialité',
+    'already_have_account' => 'Vous avez déjà un compte ?',
+    'confirm_password' => 'Confirmer le mot de passe',
+    'toggle_password_visibility' => 'Afficher/Masquer le mot de passe',
+
+    // Public pages — Navigation & Footer
+    'explorer' => 'Explorer',
+    'supervote' => 'SuperVote',
+    'boutique' => 'Boutique',
+    'vote_page' => 'Vote',
+    'shop' => 'Shop',
+    'profile' => 'Profil',
+    'sinscrire' => "S'inscrire",
+    'electric_premium_experience' => 'Electric Premium Experience.',
+    'terms' => 'Conditions',
+    'privacy' => 'Confidentialité',
+    'artist_faq' => 'FAQ Artiste',
+    'contact' => 'Contact',
+
+    // Public pages — Artist Profile
+    'verified_artist' => 'Verified Artist',
+    'play_radio' => 'Play Radio',
+    'follow' => 'Suivre',
+    'monthly_listeners' => 'Auditeurs mensuels',
+    'followers' => 'Abonnés',
+    'global_rank' => 'Classement global',
+    'discography' => 'Discographie',
+    'upcoming_events' => 'Événements à venir',
+    'ticket_types' => 'types de billets',
+    'tickets' => 'Billets',
+    'vip_membership' => 'Abonnement VIP',
+    'subscribers' => 'abonnés',
+    'subscribe' => "S'abonner",
 ];
 
 

@@ -422,6 +422,46 @@ return [
     'create_event' => 'Create event',
     'confirm_delete_ticket_type' => 'Delete this ticket type?',
     'publish' => 'Publish',
+
+    // Public auth pages
+    'create_your_account' => 'Create Your Account',
+    'prêt_à_dompter_le_rythme' => 'Ready to tame the rhythm?',
+    'create_my_account' => 'Create My Account',
+    'accept_terms' => 'I accept the :terms and :privacy.',
+    'terms_of_use' => 'terms of use',
+    'privacy_policy' => 'privacy policy',
+    'already_have_account' => 'Already have an account?',
+    'confirm_password' => 'Confirm password',
+    'toggle_password_visibility' => 'Toggle password visibility',
+
+    // Public pages — Navigation & Footer
+    'explorer' => 'Explore',
+    'supervote' => 'SuperVote',
+    'boutique' => 'Shop',
+    'vote_page' => 'Vote',
+    'shop' => 'Shop',
+    'profile' => 'Profile',
+    'sinscrire' => 'Sign up',
+    'electric_premium_experience' => 'Electric Premium Experience.',
+    'terms' => 'Terms',
+    'privacy' => 'Privacy',
+    'artist_faq' => 'Artist FAQ',
+    'contact' => 'Contact',
+
+    // Public pages — Artist Profile
+    'verified_artist' => 'Verified Artist',
+    'play_radio' => 'Play Radio',
+    'follow' => 'Follow',
+    'monthly_listeners' => 'Monthly Listeners',
+    'followers' => 'Followers',
+    'global_rank' => 'Global Rank',
+    'discography' => 'Discography',
+    'upcoming_events' => 'Upcoming Events',
+    'ticket_types' => 'ticket types',
+    'tickets' => 'Tickets',
+    'vip_membership' => 'VIP Membership',
+    'subscribers' => 'subscribers',
+    'subscribe' => 'Subscribe',
 ];
 
 

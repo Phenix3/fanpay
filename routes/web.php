@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
 
+// Public artist profile
+Route::get('/artists/{slug}', [\App\Http\Controllers\Web\ArtistProfileController::class, 'show'])
+    ->name('artists.show');
+
 // Language switcher
 Route::get('/locale/{locale}', function (string $locale) {
     if (! in_array($locale, ['fr', 'en'])) {
