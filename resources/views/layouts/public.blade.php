@@ -26,7 +26,7 @@
                     <div class="flex gap-6">
                         <a
                             class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform"
-                            href="#"
+                            href="{{ route('artists.index') }}" wire:navigate
                         >{{ __('messages.explorer') }}</a>
                         <a
                             class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform"
@@ -72,7 +72,7 @@
             <nav
                 class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-2 md:hidden bg-background/90 backdrop-blur-xl border-t border-primary-fixed/30 shadow-[0_-8px_24px_rgba(0,227,139,0.15)] rounded-t-xl"
             >
-                <a class="flex flex-col items-center justify-center text-primary-container rounded-2xl p-2 px-4 active:scale-90 transition-all" href="#">
+                <a class="flex flex-col items-center justify-center text-primary-container rounded-2xl p-2 px-4 active:scale-90 transition-all" href="{{ route('artists.index') }}" wire:navigate>
                     <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">explore</span>
                     <span class="font-label-md text-label-md mt-1">{{ __('messages.explorer') }}</span>
                 </a>

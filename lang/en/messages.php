@@ -611,7 +611,29 @@ return [
     'available' => 'available',
     'no_tickets_available' => 'No tickets available for this event yet.',
     'back_to_explore' => 'Back to Explore',
+
+    // Public pages — Artist Listing
+    'explorer_artists' => 'Explore Artists',
+    'explorer_artists_subtitle' => 'Discover the most exciting talents from the Cameroonian music scene.',
+    'search_artists_placeholder' => 'Search artists...',
+    'artists_count' => ':count artist(s)',
+    'view_profile' => 'View Profile',
+    'no_artists_found' => 'No Artists Found',
+    'no_artists_found_desc' => 'No artists match your search criteria. Try adjusting your search terms.',
+    'clear_search' => 'Clear Search',
 ];
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

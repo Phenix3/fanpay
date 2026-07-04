@@ -610,7 +610,28 @@ return [
     'available' => 'disponibles',
     'no_tickets_available' => 'Aucun billet disponible pour cet événement pour le moment.',
     'back_to_explore' => 'Retour à l\'exploration',
+
+    // Public pages — Artist Listing
+    'explorer_artists' => 'Explorer les artistes',
+    'explorer_artists_subtitle' => 'Découvrez les talents les plus prometteurs de la scène musicale camerounaise.',
+    'search_artists_placeholder' => 'Rechercher des artistes...',
+    'artists_count' => ':count artiste(s)',
+    'view_profile' => 'Voir le profil',
+    'no_artists_found' => 'Aucun artiste trouvé',
+    'no_artists_found_desc' => 'Aucun artiste ne correspond à votre recherche. Essayez de modifier vos termes de recherche.',
+    'clear_search' => 'Effacer la recherche',
 ];
+
+
+
+
+
+
+
+
+
+
+
 
 
 

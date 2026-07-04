@@ -7,6 +7,10 @@ Route::view('/', 'welcome')->name('home');
 // Public explore / boutique
 Route::view('/explore', 'pages::boutique')->name('boutique');
 
+// Public artist listing
+Route::get('/artists', [\App\Http\Controllers\Web\ArtistListController::class, 'index'])
+    ->name('artists.index');
+
 // Public artist profile
 Route::get('/artists/{slug}', [\App\Http\Controllers\Web\ArtistProfileController::class, 'show'])
     ->name('artists.show');
