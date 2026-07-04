@@ -433,6 +433,17 @@ return [
     'confirm_password' => 'Confirmer le mot de passe',
     'toggle_password_visibility' => 'Afficher/Masquer le mot de passe',
 
+    // Public pages — Auth (Forgot Password)
+    'password_recovery' => 'Récupération de mot de passe',
+    'enter_email_for_reset' => 'Entrez votre email pour recevoir un lien de réinitialisation.',
+    'send_reset_link' => 'Envoyer le lien',
+    'back_to_login' => 'Retour à la connexion',
+    'link_sent' => 'Lien envoyé !',
+    'reset_instructions_sent' => 'Nous avons envoyé les instructions de réinitialisation à votre adresse email.',
+    'check_spam' => 'Si vous ne voyez pas l\'email, vérifiez vos courriers indésirables ou attendez quelques minutes.',
+    'resend_email' => 'Renvoyer l\'email',
+    'remember_password' => 'Vous vous souvenez de votre mot de passe ?',
+
     // Public pages — Navigation & Footer
     'explorer' => 'Explorer',
     'supervote' => 'SuperVote',

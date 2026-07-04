@@ -1,3 +1,22 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Claude Code Usage
+
+### Common Commands
+- Backend: `php artisan serve`, `php artisan test`, `composer run lint`, `composer run test`
+- Frontend: `npm run dev`, `npm run build`
+- Setup: `composer run setup`
+
+### Architecture Overview
+- Laravel app with domain-driven design (app/Domain/*)
+- API routes: routes/api.php (Sanctum auth, role middleware)
+- Web routes: routes/web.php (Livewire + traditional controllers)
+- Testing: Pest (tests/Feature, tests/Unit)
+- Frontend: Vite + Tailwind CSS
+
+---
 <laravel-boost-guidelines>
 === foundation rules ===
 

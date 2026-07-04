@@ -434,6 +434,17 @@ return [
     'confirm_password' => 'Confirm password',
     'toggle_password_visibility' => 'Toggle password visibility',
 
+    // Public pages — Auth (Forgot Password)
+    'password_recovery' => 'Password Recovery',
+    'enter_email_for_reset' => 'Enter your email to receive a password reset link.',
+    'send_reset_link' => 'Send Reset Link',
+    'back_to_login' => 'Back to login',
+    'link_sent' => 'Link Sent!',
+    'reset_instructions_sent' => 'We\'ve sent reset instructions to your email address.',
+    'check_spam' => 'If you don\'t see the email, check your spam folder or wait a few minutes.',
+    'resend_email' => 'Resend Email',
+    'remember_password' => 'Remember your password?',
+
     // Public pages — Navigation & Footer
     'explorer' => 'Explore',
     'supervote' => 'SuperVote',
