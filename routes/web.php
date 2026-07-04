@@ -11,6 +11,10 @@ Route::view('/explore', 'pages::boutique')->name('boutique');
 Route::get('/artists/{slug}', [\App\Http\Controllers\Web\ArtistProfileController::class, 'show'])
     ->name('artists.show');
 
+// Public event detail
+Route::get('/events/{slug}', [\App\Http\Controllers\Web\EventController::class, 'show'])
+    ->name('events.show');
+
 // Language switcher
 Route::get('/locale/{locale}', function (string $locale) {
     if (! in_array($locale, ['fr', 'en'])) {

@@ -538,7 +538,111 @@ return [
     'vip_membership' => 'Abonnement VIP',
     'subscribers' => 'abonnés',
     'subscribe' => "S'abonner",
+
+    // Public pages — Artist Dashboard
+    'overview' => 'Aperçu',
+    'dashboard_performance_subtitle' => 'Votre performance des 30 derniers jours.',
+    'available_balance' => 'Solde disponible',
+    'withdraw_funds' => 'Retirer des fonds',
+    'statements' => 'Relevés',
+    'total_streams' => 'Streams totaux',
+    'this_month' => 'ce mois',
+    'recent_activity' => 'Activité récente',
+    'royalties_apple_music' => 'Revenus - Apple Music',
+    'merch_store_payout' => 'Paiement boutique',
+    'bank_withdrawal' => 'Retrait bancaire',
+    'processed' => 'Traité',
+    'top_performing_track' => 'Morceau le plus performant',
+    'top_track_description' => 'Actuellement tendance #1 dans les charts Afrobeats. Lancez une campagne promotionnelle pour capitaliser sur cette dynamique.',
+    'boost_track' => 'Promouvoir',
+    'upload_new_track' => 'Ajouter un morceau',
+    'analytics' => 'Analytiques',
+    'today_at' => "Aujourd'hui à",
+    'yesterday' => 'Hier',
+    'admin_dashboard_subtitle' => 'Supervision de la plateforme',
+    'admin_panel' => 'Panneau d\'administration',
+    'admin_dashboard_desc' => 'Accédez au panneau d\'administration Filament pour gérer les utilisateurs, les paiements et le contenu.',
+    'fan_dashboard_subtitle' => 'Découvrez et soutenez vos artistes préférés.',
+    'fan_library_desc' => 'Retrouvez vos albums et morceaux favoris.',
+    'fan_tickets_desc' => 'Vos billets pour les événements à venir.',
+    'fan_contests_desc' => 'Votez pour vos artistes préférés.',
+    'access_admin' => 'Accéder au panneau',
+
+    // Public pages — Auth (Reset Password)
+    'reset_password' => 'Réinitialisation du mot de passe',
+    'enter_new_password_below' => 'Entrez votre nouveau mot de passe ci-dessous.',
+    'new_password' => 'Nouveau mot de passe',
+    'reset_password_btn' => 'Réinitialiser',
+    'password_rules_hint' => 'Le mot de passe doit contenir au moins 8 caractères, dont une lettre majuscule, une minuscule, un chiffre et un symbole.',
+
+    // Public pages — Auth (Confirm Password)
+    'confirm_password_title' => 'Confirmer le mot de passe',
+    'secure_area_description' => 'Ceci est une zone sécurisée. Veuillez confirmer votre mot de passe avant de continuer.',
+    'confirm' => 'Confirmer',
+
+    // Public pages — Auth (Verify Email)
+    'email_verification' => 'Vérification de l\'email',
+    'verify_email_description' => 'Veuillez vérifier votre adresse email en cliquant sur le lien que nous venons de vous envoyer.',
+    'verification_link_sent' => 'Un nouveau lien de vérification a été envoyé à votre adresse email.',
+    'resend_verification_email' => 'Renvoyer l\'email de vérification',
+
+    // Public pages — Auth (Two-Factor)
+    'authentication_code' => 'Code d\'authentification',
+    'auth_code_description' => 'Entrez le code d\'authentification fourni par votre application d\'authentification.',
+    'recovery_code' => 'Code de récupération',
+    'recovery_code_description' => 'Veuillez confirmer l\'accès à votre compte en entrant l\'un de vos codes de récupération d\'urgence.',
+    'continue_btn' => 'Continuer',
+    'or_you_can' => 'ou vous pouvez',
+    'login_using_recovery_code' => 'vous connecter avec un code de récupération',
+    'login_using_auth_code' => 'vous connecter avec un code d\'authentification',
+
+    // Public pages — Auth (Verify OTP)
+    'verify_your_phone' => 'Vérifier votre numéro de téléphone',
+    'verify_phone_description' => 'Entrez le code à 6 chiffres envoyé à votre téléphone.',
+
+    // Public pages — Event Detail
+    'event_today' => "Aujourd'hui",
+    'event_upcoming' => 'À venir',
+    'event_past' => 'Passé',
+    'about_event' => 'À propos de cet événement',
+    'location' => 'Lieu',
+    'buy_ticket' => 'Acheter le billet',
+    'available' => 'disponibles',
+    'no_tickets_available' => 'Aucun billet disponible pour cet événement pour le moment.',
+    'back_to_explore' => 'Retour à l\'exploration',
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

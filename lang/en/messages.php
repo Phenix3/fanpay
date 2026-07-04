@@ -539,7 +539,112 @@ return [
     'vip_membership' => 'VIP Membership',
     'subscribers' => 'subscribers',
     'subscribe' => 'Subscribe',
+
+    // Public pages — Artist Dashboard
+    'overview' => 'Overview',
+    'dashboard_performance_subtitle' => 'Your performance for the last 30 days.',
+    'available_balance' => 'Available Balance',
+    'withdraw_funds' => 'Withdraw Funds',
+    'statements' => 'Statements',
+    'total_streams' => 'Total Streams',
+    'this_month' => 'this month',
+    'recent_activity' => 'Recent Activity',
+    'royalties_apple_music' => 'Royalties - Apple Music',
+    'merch_store_payout' => 'Merch Store Payout',
+    'bank_withdrawal' => 'Bank Withdrawal',
+    'processed' => 'Processed',
+    'top_performing_track' => 'Top Performing Track',
+    'top_track_description' => 'Currently trending #1 on the Afrobeats charts. Launch a promotional campaign to capitalize on this momentum.',
+    'boost_track' => 'Boost Track',
+    'upload_new_track' => 'Upload New Track',
+    'analytics' => 'Analytics',
+    'today_at' => 'Today at',
+    'yesterday' => 'Yesterday',
+    'admin_dashboard_subtitle' => 'Platform supervision',
+    'admin_panel' => 'Admin Panel',
+    'admin_dashboard_desc' => 'Access the Filament admin panel to manage users, payments, and content.',
+    'fan_dashboard_subtitle' => 'Discover and support your favorite artists.',
+    'fan_library_desc' => 'Your favorite albums and tracks.',
+    'fan_tickets_desc' => 'Your tickets for upcoming events.',
+    'fan_contests_desc' => 'Vote for your favorite artists.',
+    'access_admin' => 'Access Admin Panel',
+
+    // Public pages — Auth (Reset Password)
+    'reset_password' => 'Reset Password',
+    'enter_new_password_below' => 'Please enter your new password below.',
+    'new_password' => 'New Password',
+    'reset_password_btn' => 'Reset Password',
+    'password_rules_hint' => 'Password must be at least 8 characters, including an uppercase letter, a lowercase letter, a number, and a symbol.',
+
+    // Public pages — Auth (Confirm Password)
+    'confirm_password_title' => 'Confirm Password',
+    'secure_area_description' => 'This is a secure area. Please confirm your password before continuing.',
+    'confirm' => 'Confirm',
+
+    // Public pages — Auth (Verify Email)
+    'email_verification' => 'Email Verification',
+    'verify_email_description' => 'Please verify your email address by clicking on the link we just emailed to you.',
+    'verification_link_sent' => 'A new verification link has been sent to your email address.',
+    'resend_verification_email' => 'Resend Verification Email',
+
+    // Public pages — Auth (Two-Factor)
+    'authentication_code' => 'Authentication Code',
+    'auth_code_description' => 'Enter the authentication code provided by your authenticator application.',
+    'recovery_code' => 'Recovery Code',
+    'recovery_code_description' => 'Please confirm access to your account by entering one of your emergency recovery codes.',
+    'continue_btn' => 'Continue',
+    'or_you_can' => 'or you can',
+    'login_using_recovery_code' => 'login using a recovery code',
+    'login_using_auth_code' => 'login using an authentication code',
+
+    // Public pages — Auth (Verify OTP)
+    'verify_your_phone' => 'Verify Your Phone Number',
+    'verify_phone_description' => 'Enter the 6-digit code sent to your phone.',
+
+    // Public pages — Event Detail
+    'event_today' => 'Today',
+    'event_upcoming' => 'Upcoming',
+    'event_past' => 'Past Event',
+    'about_event' => 'About This Event',
+    'location' => 'Location',
+    'buy_ticket' => 'Buy Ticket',
+    'available' => 'available',
+    'no_tickets_available' => 'No tickets available for this event yet.',
+    'back_to_explore' => 'Back to Explore',
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
