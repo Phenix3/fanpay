@@ -620,6 +620,21 @@ return [
     'no_artists_found' => 'Aucun artiste trouvé',
     'no_artists_found_desc' => 'Aucun artiste ne correspond à votre recherche. Essayez de modifier vos termes de recherche.',
     'clear_search' => 'Effacer la recherche',
+
+    // Events listing page
+    'events_nav' => 'Événements',
+    'events_title' => 'Événements Live',
+    'events_subtitle' => 'Découvrez les concerts, spectacles et événements musicaux près de chez vous.',
+    'events_upcoming' => 'À venir',
+    'events_past' => 'Passés',
+    'events_search_placeholder' => 'Rechercher des événements...',
+    'events_count' => '{0} Aucun événement trouvé|{1} 1 événement trouvé|[2,*] :count événements trouvés',
+    'events_free' => 'Gratuit',
+    'events_get_tickets' => 'Billets',
+    'events_no_upcoming' => 'Aucun événement à venir',
+    'events_no_past' => 'Aucun événement passé',
+    'events_no_results_desc' => 'Aucun événement ne correspond à vos filtres. Essayez de modifier votre recherche ou la période.',
+    'events_clear_filters' => 'Effacer les filtres',
 ];
 
 

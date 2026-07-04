@@ -15,6 +15,10 @@ Route::get('/artists', [\App\Http\Controllers\Web\ArtistListController::class, '
 Route::get('/artists/{slug}', [\App\Http\Controllers\Web\ArtistProfileController::class, 'show'])
     ->name('artists.show');
 
+// Public events listing
+Route::get('/events', [\App\Http\Controllers\Web\EventListController::class, 'index'])
+    ->name('events.index');
+
 // Public event detail
 Route::get('/events/{slug}', [\App\Http\Controllers\Web\EventController::class, 'show'])
     ->name('events.show');

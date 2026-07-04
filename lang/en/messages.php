@@ -621,6 +621,21 @@ return [
     'no_artists_found' => 'No Artists Found',
     'no_artists_found_desc' => 'No artists match your search criteria. Try adjusting your search terms.',
     'clear_search' => 'Clear Search',
+
+    // Events listing page
+    'events_nav' => 'Events',
+    'events_title' => 'Live Events',
+    'events_subtitle' => 'Discover concerts, shows and music events happening near you.',
+    'events_upcoming' => 'Upcoming',
+    'events_past' => 'Past',
+    'events_search_placeholder' => 'Search events...',
+    'events_count' => '{0} No events found|{1} 1 event found|[2,*] :count events found',
+    'events_free' => 'Free',
+    'events_get_tickets' => 'Get Tickets',
+    'events_no_upcoming' => 'No upcoming events',
+    'events_no_past' => 'No past events',
+    'events_no_results_desc' => 'No events match your current filters. Try adjusting your search or period.',
+    'events_clear_filters' => 'Clear Filters',
 ];
 
 

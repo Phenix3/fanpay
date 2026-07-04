@@ -30,6 +30,10 @@
                         >{{ __('messages.explorer') }}</a>
                         <a
                             class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform"
+                            href="{{ route('events.index') }}" wire:navigate
+                        >{{ __('messages.events_nav') }}</a>
+                        <a
+                            class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform"
                             href="#"
                         >{{ __('messages.supervote') }}</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform" href="{{ route('boutique') }}" wire:navigate>{{ __('messages.boutique') }}</a>
                     </div>
@@ -80,9 +84,9 @@
                     <span class="material-symbols-outlined">how_to_vote</span>
                     <span class="font-label-md text-label-md mt-1">{{ __('messages.vote_page') }}</span>
                 </a>
-                <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all" href="#">
-                    <span class="material-symbols-outlined">shopping_bag</span>
-                    <span class="font-label-md text-label-md mt-1">{{ __('messages.shop') }}</span>
+                <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all" href="{{ route('events.index') }}" wire:navigate>
+                    <span class="material-symbols-outlined">event</span>
+                    <span class="font-label-md text-label-md mt-1">{{ __('messages.events_nav') }}</span>
                 </a>
                 <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all" href="#">
                     <span class="material-symbols-outlined">person</span>
