@@ -622,6 +622,18 @@ return [
     'clear_search' => 'Effacer la recherche',
 
     // Events listing page
+    // Public SuperVote page
+    'supervote_per_vote' => '/vote',
+    'supervote_votes' => 'votes',
+    'supervote_vote_now' => 'Voter maintenant',
+    'supervote_login_to_vote' => 'Connectez-vous pour voter',
+    'supervote_no_active' => 'Aucun concours actif',
+    'supervote_no_active_desc' => "Il n'y a pas de concours de vote actif pour le moment. Revenez bientôt !",
+    'supervote_past_contests' => 'Concours passés',
+    'supervote_ended_on' => 'Terminé le',
+    'supervote_ended' => 'Terminé',
+
+    // Events listing page
     'events_nav' => 'Événements',
     'events_title' => 'Événements Live',
     'events_subtitle' => 'Découvrez les concerts, spectacles et événements musicaux près de chez vous.',

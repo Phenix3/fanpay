@@ -34,7 +34,7 @@
                         >{{ __('messages.events_nav') }}</a>
                         <a
                             class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform"
-                            href="#"
+                            href="{{ route('supervote') }}" wire:navigate
                         >{{ __('messages.supervote') }}</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform" href="{{ route('boutique') }}" wire:navigate>{{ __('messages.boutique') }}</a>
                     </div>
                 </div>
@@ -80,8 +80,8 @@
                     <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">explore</span>
                     <span class="font-label-md text-label-md mt-1">{{ __('messages.explorer') }}</span>
                 </a>
-                <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all" href="#">
-                    <span class="material-symbols-outlined">how_to_vote</span>
+                <a class="flex flex-col items-center justify-center text-primary-container active:scale-90 transition-all" href="{{ route('supervote') }}" wire:navigate>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">how_to_vote</span>
                     <span class="font-label-md text-label-md mt-1">{{ __('messages.vote_page') }}</span>
                 </a>
                 <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all" href="{{ route('events.index') }}" wire:navigate>

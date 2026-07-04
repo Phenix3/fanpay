@@ -15,6 +15,10 @@ Route::get('/artists', [\App\Http\Controllers\Web\ArtistListController::class, '
 Route::get('/artists/{slug}', [\App\Http\Controllers\Web\ArtistProfileController::class, 'show'])
     ->name('artists.show');
 
+// Public SuperVote page
+Route::get('/supervote', [\App\Http\Controllers\Web\SuperVoteController::class, 'index'])
+    ->name('supervote');
+
 // Public events listing
 Route::get('/events', [\App\Http\Controllers\Web\EventListController::class, 'index'])
     ->name('events.index');
