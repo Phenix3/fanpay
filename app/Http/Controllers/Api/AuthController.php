@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Api;
 
+use App\Domain\Users\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -20,7 +21,7 @@ class AuthController extends Controller
             'device_name' => ['required', 'string', 'max:255'],
         ]);
 
-        $user = \App\Domain\Users\Models\User::where('email', $validated['email'])->first();
+        $user = User::where('email', $validated['email'])->first();
 
         if (! $user || ! Hash::check($validated['password'], $user->password)) {
             throw ValidationException::withMessages([

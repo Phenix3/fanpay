@@ -6,7 +6,6 @@ namespace App\Http\Controllers\Web;
 
 use App\Domain\Events\Models\Event;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventListController extends Controller
@@ -35,13 +34,13 @@ class EventListController extends Controller
             $search = $request->search;
             $query->where(function ($q) use ($search) {
                 $q->where('title', 'like', "%{$search}%")
-                  ->orWhere('venue', 'like', "%{$search}%")
-                  ->orWhereHas('artist', function ($art) use ($search) {
-                      $art->where('name', 'like', "%{$search}%")
-                          ->orWhereHas('artistProfile', function ($profile) use ($search) {
-                              $profile->where('stage_name', 'like', "%{$search}%");
-                          });
-                  });
+                    ->orWhere('venue', 'like', "%{$search}%")
+                    ->orWhereHas('artist', function ($art) use ($search) {
+                        $art->where('name', 'like', "%{$search}%")
+                            ->orWhereHas('artistProfile', function ($profile) use ($search) {
+                                $profile->where('stage_name', 'like', "%{$search}%");
+                            });
+                    });
             });
         }
 

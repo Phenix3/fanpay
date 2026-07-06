@@ -21,10 +21,10 @@ class SetLocale
         // 1. User preference
         if ($request->user()?->locale) {
             $locale = $request->user()->locale;
-        // 2. Cookie
+            // 2. Cookie
         } elseif ($request->cookie('locale')) {
             $locale = $request->cookie('locale');
-        // 3. Accept-Language header
+            // 3. Accept-Language header
         } elseif ($request->getPreferredLanguage(['fr', 'en'])) {
             $locale = $request->getPreferredLanguage(['fr', 'en']);
         }

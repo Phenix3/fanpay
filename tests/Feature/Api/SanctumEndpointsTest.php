@@ -5,11 +5,8 @@ declare(strict_types=1);
 use App\Domain\Catalog\Models\Album;
 use App\Domain\Catalog\Models\Genre;
 use App\Domain\Catalog\Models\Track;
-use App\Domain\Dedications\Models\Dedication;
 use App\Domain\Events\Models\Event;
-use App\Domain\Events\Models\TicketType;
 use App\Domain\Store\Models\Order;
-use App\Domain\Store\Models\OrderItem;
 use App\Domain\Store\Models\Product;
 use App\Domain\Users\Models\ArtistProfile;
 use App\Domain\Users\Models\User;
@@ -19,7 +16,11 @@ use App\Domain\Voting\Models\Candidate;
 use App\Domain\Voting\Models\Contest;
 use App\Domain\Voting\Models\Vote;
 use App\Domain\Wallet\Models\Wallet;
+use Database\Seeders\GenreSeeder;
+use Database\Seeders\RolePermissionSeeder;
 use Illuminate\Support\Str;
+use Illuminate\Testing\TestResponse;
+use Spatie\Permission\PermissionRegistrar;
 
 // ─── Helpers ───────────────────────────────────────────────────────────────
 
@@ -28,9 +29,9 @@ use Illuminate\Support\Str;
  * Runs inside the RefreshDatabase transaction so data is always available.
  */
 beforeEach(function () {
-    app()->make(\Spatie\Permission\PermissionRegistrar::class)->forgetCachedPermissions();
-    (new \Database\Seeders\RolePermissionSeeder)->run();
-    (new \Database\Seeders\GenreSeeder)->run();
+    app()->make(PermissionRegistrar::class)->forgetCachedPermissions();
+    (new RolePermissionSeeder)->run();
+    (new GenreSeeder)->run();
 });
 
 /**
@@ -87,7 +88,7 @@ function authHeader(User $user, string $device = 'test-device'): array
 /**
  * Assert the response has a JSON API error structure.
  */
-function assertJsonError(\Illuminate\Testing\TestResponse $response, int $status): void
+function assertJsonError(TestResponse $response, int $status): void
 {
     $response->assertStatus($status);
     $response->assertJsonStructure(['message']);

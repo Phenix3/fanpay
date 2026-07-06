@@ -7,6 +7,7 @@ namespace App\Domain\Payments\Actions;
 use App\Domain\Payments\Models\Payout;
 use App\Domain\Users\Models\User;
 use App\Domain\Various\Models\Setting;
+use App\Jobs\ProcessPayout;
 use App\Services\Wallet\WalletService;
 use Illuminate\Support\Str;
 
@@ -81,7 +82,7 @@ class RequestPayoutAction
 
         // If auto-approved, dispatch processing job
         if ($status === 'approved') {
-            \App\Jobs\ProcessPayout::dispatch($payout);
+            ProcessPayout::dispatch($payout);
         }
 
         return [

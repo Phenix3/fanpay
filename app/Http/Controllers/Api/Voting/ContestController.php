@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Api\Voting;
 
 use App\Domain\Voting\Models\Candidate;
 use App\Domain\Voting\Models\Contest;
+use App\Domain\Voting\Models\Vote;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -97,7 +98,7 @@ class ContestController extends Controller
         $quantity = (int) $validated['quantity'];
         $amount = $quantity * $contest->vote_price;
 
-        $vote = \App\Domain\Voting\Models\Vote::create([
+        $vote = Vote::create([
             'candidate_id' => $candidate->id,
             'user_id' => $request->user()?->id,
             'quantity' => $quantity,

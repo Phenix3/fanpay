@@ -76,7 +76,7 @@ class RevenueSplitService
         $price = $content->price;
         $netAmount = $this->commissionService->calculateNetForArtist($price);
 
-        DB::transaction(function () use ($splits, $netAmount, $buyer, $purchaseReference, $description, $meta) {
+        DB::transaction(function () use ($splits, $netAmount, $purchaseReference, $description, $meta) {
             foreach ($splits as $split) {
                 $splitArtist = $split->artist;
                 $splitAmount = (int) floor($netAmount * $split->percentage / 100);

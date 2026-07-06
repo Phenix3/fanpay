@@ -20,7 +20,7 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'phone' => '6' . fake()->numerify('########'),
+            'phone' => '6'.fake()->numerify('########'),
             'phone_verified_at' => now(),
             'email_verified_at' => now(),
             'role' => UserRole::Fan,

@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace App\Domain\Users\Models;
 
+use App\Domain\Content\Models\ContentRight;
 use App\Domain\Users\Enums\UserRole;
+use App\Domain\Vip\Models\VipSubscription;
+use App\Domain\Wallet\Models\Transaction;
+use App\Domain\Wallet\Models\Wallet;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
@@ -45,7 +49,7 @@ use Spatie\Permission\Traits\HasRoles;
 #[Hidden(['password', 'two_factor_secret', 'two_factor_recovery_codes', 'remember_token'])]
 class User extends Authenticatable implements PasskeyUser
 {
-    use HasFactory, HasApiTokens, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable, SoftDeletes, HasRoles;
+    use HasApiTokens, HasFactory, HasRoles, Notifiable, PasskeyAuthenticatable, SoftDeletes, TwoFactorAuthenticatable;
 
     protected function casts(): array
     {
@@ -119,34 +123,34 @@ class User extends Authenticatable implements PasskeyUser
     }
 
     /**
-     * @return HasMany<\App\Domain\Vip\Models\VipSubscription>
+     * @return HasMany<VipSubscription>
      */
     public function vipSubscriptions(): HasMany
     {
-        return $this->hasMany(\App\Domain\Vip\Models\VipSubscription::class);
+        return $this->hasMany(VipSubscription::class);
     }
 
     /**
-     * @return HasOne<\App\Domain\Wallet\Models\Wallet>
+     * @return HasOne<Wallet>
      */
     public function wallet(): HasOne
     {
-        return $this->hasOne(\App\Domain\Wallet\Models\Wallet::class);
+        return $this->hasOne(Wallet::class);
     }
 
     /**
-     * @return HasMany<\App\Domain\Wallet\Models\Transaction>
+     * @return HasMany<Transaction>
      */
     public function transactions(): HasMany
     {
-        return $this->hasMany(\App\Domain\Wallet\Models\Transaction::class);
+        return $this->hasMany(Transaction::class);
     }
 
     /**
-     * @return HasMany<\App\Domain\Content\Models\ContentRight>
+     * @return HasMany<ContentRight>
      */
     public function contentRights(): HasMany
     {
-        return $this->hasMany(\App\Domain\Content\Models\ContentRight::class, 'artist_id');
+        return $this->hasMany(ContentRight::class, 'artist_id');
     }
 }

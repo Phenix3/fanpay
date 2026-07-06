@@ -31,9 +31,9 @@ class ArtistListController extends Controller
             $search = $request->search;
             $query->where(function ($q) use ($search) {
                 $q->where('name', 'like', "%{$search}%")
-                  ->orWhereHas('artistProfile', function ($profile) use ($search) {
-                      $profile->where('stage_name', 'like', "%{$search}%");
-                  });
+                    ->orWhereHas('artistProfile', function ($profile) use ($search) {
+                        $profile->where('stage_name', 'like', "%{$search}%");
+                    });
             });
         }
 

@@ -12,8 +12,6 @@ class EnsureUserRole
 {
     /**
      * Handle an incoming request.
-     *
-     * @param  string  ...$roles
      */
     public function handle(Request $request, Closure $next, string ...$roles): Response
     {

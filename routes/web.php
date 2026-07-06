@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\Auth\OtpController;
+use App\Http\Controllers\Web\ArtistListController;
+use App\Http\Controllers\Web\ArtistProfileController;
+use App\Http\Controllers\Web\EventController;
+use App\Http\Controllers\Web\EventListController;
+use App\Http\Controllers\Web\SuperVoteController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
@@ -8,23 +14,23 @@ Route::view('/', 'welcome')->name('home');
 Route::view('/explore', 'pages::boutique')->name('boutique');
 
 // Public artist listing
-Route::get('/artists', [\App\Http\Controllers\Web\ArtistListController::class, 'index'])
+Route::get('/artists', [ArtistListController::class, 'index'])
     ->name('artists.index');
 
 // Public artist profile
-Route::get('/artists/{slug}', [\App\Http\Controllers\Web\ArtistProfileController::class, 'show'])
+Route::get('/artists/{slug}', [ArtistProfileController::class, 'show'])
     ->name('artists.show');
 
 // Public SuperVote page
-Route::get('/supervote', [\App\Http\Controllers\Web\SuperVoteController::class, 'index'])
+Route::get('/supervote', [SuperVoteController::class, 'index'])
     ->name('supervote');
 
 // Public events listing
-Route::get('/events', [\App\Http\Controllers\Web\EventListController::class, 'index'])
+Route::get('/events', [EventListController::class, 'index'])
     ->name('events.index');
 
 // Public event detail
-Route::get('/events/{slug}', [\App\Http\Controllers\Web\EventController::class, 'show'])
+Route::get('/events/{slug}', [EventController::class, 'show'])
     ->name('events.show');
 
 // Language switcher
@@ -44,11 +50,11 @@ Route::get('/locale/{locale}', function (string $locale) {
 
 // OTP routes (guest)
 Route::middleware('guest')->group(function () {
-    Route::get('/verify-otp/{purpose?}', [\App\Http\Controllers\Auth\OtpController::class, 'show'])
+    Route::get('/verify-otp/{purpose?}', [OtpController::class, 'show'])
         ->name('otp.verify');
-    Route::post('/otp/send', [\App\Http\Controllers\Auth\OtpController::class, 'send'])
+    Route::post('/otp/send', [OtpController::class, 'send'])
         ->name('otp.send');
-    Route::post('/otp/verify', [\App\Http\Controllers\Auth\OtpController::class, 'verify'])
+    Route::post('/otp/verify', [OtpController::class, 'verify'])
         ->name('otp.verify.submit');
 });
 

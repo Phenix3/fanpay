@@ -14,7 +14,7 @@ use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class ProcessPaymentWebhook implements ShouldQueue, ShouldBeUnique
+class ProcessPaymentWebhook implements ShouldBeUnique, ShouldQueue
 {
     use Queueable;
 
