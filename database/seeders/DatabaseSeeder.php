@@ -19,15 +19,7 @@ class DatabaseSeeder extends Seeder
             RolePermissionSeeder::class,
             SettingSeeder::class,
             GenreSeeder::class,
+            UserSeeder::class,
         ]);
-
-        // Create default admin user
-        User::factory()->create([
-            'name' => 'Admin FanPay',
-            'email' => 'admin@fanpay.cm',
-            'phone' => '691234567',
-            'role' => 'admin',
-            'locale' => 'fr',
-        ])->assignRole('admin');
     }
 }
